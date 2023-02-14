@@ -1,42 +1,27 @@
 {% block html_head_container %}
 
-{% include 'html-header.twig' %}
-	{#{% block head %}
-	{% endblock %}
-	</head>#}
+	{% include 'html-header.twig' %}
 {% endblock %}
 
-    <!-- navbar -->
-    <div class="bg-white">
-        <div class="container">
-            <div class="row justify-content-center py-2">
-                <div class="d-flex justify-content-between">
-                    <div> <a href=""><img class="w-75" src="{{ site.theme.link }}/static/logo_new.png" alt="logo"></a> </div>
-                    <div></div>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- navbar -->
+<div class="bg-white">
+	<div class="container">
+		<div class="row justify-content-center py-2">
+			<div class="d-flex justify-content-between">
+				<div>
+					<a href=""><img class="w-75" src="{{ site.theme.link }}/static/logo_new.png" alt="logo"></a>
+				</div>
+				<div></div>
+			</div>
+		</div>
+	</div>
+</div>
 
-		{#<section id="content" role="main" class="content-wrapper">
-			{% if title %}<h1>{{title}}</h1>{% endif %}
-			<div class="wrapper {{sidebar_class}}">#}
-				{% block content %}
-					Sorry, no content
-				{% endblock %}
-			{#</div>
-			{% if sidebar %}
-				<aside class="layout-sidebar">
-					{{sidebar}}
-				</aside>
-			{% endif %}
-		</section>#}
+{% block content %}
+	Sorry, no content
+{% endblock %}
 
-		{% block footer %}
-			{#<footer id="footer">#}
-				{% include 'footer.twig' %}
-			{#</footer>
-			{{ function('wp_footer') }}#}
-		{% endblock %}
-	</body>
-</html>
+{% block footer %}
+	{% include 'footer.twig' %}
+	{{ function('wp_footer') }}
+{% endblock %}</body></html>
