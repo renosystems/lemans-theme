@@ -80,13 +80,20 @@ select {
   font-size: 0.8rem !important;
 }
 
-#contact-form input[type=submit] {
+#contact-form input[type="submit"] {
   background-color: #ffac3a;
   color: white;
   font-size: 0.9rem;
   border: none;
   border-radius: 3.5px;
   padding-block: 1em;
+}
+
+@media (min-width: 576px) {
+  #contact-form .modal-dialog {
+    width: 80vw;
+    max-width: 80vw;
+  }
 }
 
 .carousel-inner {

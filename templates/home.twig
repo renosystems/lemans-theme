@@ -5,6 +5,9 @@
 	<!-- form -->
 	<div id="contact-form" class="dark-bg">
 		<div class="container py-5">
+			<div class="d-flex flex-column " id="thank-you-message">
+				{% include "components/contact-thank-you.twig" %}
+			</div>
 			<div class="row justify-content-center contact-bg py-4 px-3 rounded">
 				<div class="col-md-6 d-none d-md-block">
 					<div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade h-100 carousel-bg rounded-3 d-flex flex-column justify-content-center" data-bs-ride="carousel">
@@ -40,7 +43,7 @@
 							<div class="form-title">Contact Us</div>
 							<div>We're here to help you, send us your queries via the below form</div>
 						</div>
-						<div class="d-flex flex-column" >
+						<div class="d-flex flex-column">
 							{{post.content}}
 						</div>
 
@@ -53,14 +56,14 @@
 
 
 	{#<div class="content-wrapper">
-			<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-				<section class="article-content">
-					<h1 class="article-h1">{{post.title}}</h1>
-					<div class="article-body">
-						{{post.content}}
-					</div>
-				</section>
-			</article>
-		</div>#}
+							<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+								<section class="article-content">
+									<h1 class="article-h1">{{post.title}}</h1>
+									<div class="article-body">
+										{{post.content}}
+									</div>
+								</section>
+							</article>
+						</div>#}
 	<!-- /content-wrapper -->
 {% endblock %}
