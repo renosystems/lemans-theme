@@ -168,8 +168,8 @@ select {
   align-items: center;
   position: fixed;
   z-index: 2;
-  bottom: 20px;
-  right: 15px;
+  bottom: 15vh;
+  right: 7vw;
 }
 
 .icon-wrapper {
@@ -195,6 +195,14 @@ select {
 }
 .help-icons:has(+ input[type="checkbox"]:checked) {
   visibility: hidden !important;
+}
+
+#lemans-location-map {
+  width: 100% !important;
+}
+
+#lemans-location-map iframe {
+  width: 100% !important;
 }
 
 @media (max-width: 764px) {
