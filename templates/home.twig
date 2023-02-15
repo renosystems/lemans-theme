@@ -56,14 +56,30 @@
 
 
 	{#<div class="content-wrapper">
-							<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-								<section class="article-content">
-									<h1 class="article-h1">{{post.title}}</h1>
-									<div class="article-body">
-										{{post.content}}
-									</div>
-								</section>
-							</article>
-						</div>#}
+								<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+									<section class="article-content">
+										<h1 class="article-h1">{{post.title}}</h1>
+										<div class="article-body">
+											{{post.content}}
+										</div>
+									</section>
+								</article>
+							</div>#}
 	<!-- /content-wrapper -->
+	<div>available now</div>
+	{% for car in carsAvailableNow %}
+		<div>{{car.name}}</div>
+	{% endfor %}
+
+	<div>featured</div>
+	{% for car in featuredCars %}
+		<div>{{car.name}}</div>
+	{% endfor %}
+
+	<div>sports cars</div>
+	{% for car in sportsCars %}
+		<div>{{car.name}}</div>
+	{% endfor %}
+  
+
 {% endblock %}
