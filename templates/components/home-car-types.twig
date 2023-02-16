@@ -6,17 +6,18 @@
 			</h3>
 			<hr class="col-2 col-md-1"/>
 		</div>
-		<div class="row justify-content-center align-content-center">
-			{% for type in cartypes %}
-				<div class="col col-6 col-md-2">
-					<div class="d-flex justify-content-center align-items-center">
-						<img class="img-fluid" src="{{ Image(type.image).src }}" alt="{{ Image(type.image).title }}"/>
+
+		<div class="d-flex justify-content-center align-content-center px-5 swipe-container">
+			<div class="swipe-content">
+				{% for type in cartypes %}
+					<div class="swipe-content">
+						<div class="d-flex justify-content-center align-items-center">
+							<img class="img-fluid" src="{{ Image(type.image).src }}" alt="{{ Image(type.image).title }}"/>
+						</div>
+						<p class="text-center home-cartype-name">{{type.carTypeName}}</p>
 					</div>
-					<p class="text-center home-cartype-name">{{type.carTypeName}}</p>
-				</div>
-			{% endfor %}
+				{% endfor %}
+			</div>
 		</div>
-
 	</div>
-
 </div>
