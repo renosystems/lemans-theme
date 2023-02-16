@@ -167,6 +167,76 @@ select {
   font-size: 1.2rem;
 }
 
-#car-types img{
+#car-types img {
   max-height: 200px !important;
+}
+
+/*featured cars section*/
+.home-featured-car-wrapper {
+  min-height: 450px;
+  position: relative;
+}
+
+.home-featured-car-image-wraper {
+  position: absolute;
+  z-index: 10;
+  max-height: 40%;
+}
+
+.home-featured-car-content-wraper {
+  background-color: white;
+  min-height: 350px;
+  position: absolute;
+  width: 100%;
+  top: 25%;
+  padding-top: 10%;
+  box-sizing: border-box;
+  box-shadow: 0px 2.24812px 5.62029px rgba(0, 0, 0, 0.160784);
+  border-radius: 8px;
+}
+
+#featured-cars .brand-name {
+  color: #222222;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+#featured-cars .featured-car-model {
+  font-weight: 500;
+  font-size: 0.938rem;
+  color: #444444;
+}
+
+#featured-cars .specs-title {
+  font-weight: 600;
+  font-size: 0.938rem;
+  color: #171846;
+}
+
+#featured-cars .featured-specs-detail {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #444444;
+}
+
+#featured-cars .request-now-btn {
+  box-sizing: border-box;
+  background: #171846;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+}
+
+#featured-cars .more-details-btn {
+  box-sizing: border-box;
+  background: #FFFFFF;
+  border-radius: 4px;
+  border: 3px solid #171846;
+  color: #171846;
+  font-weight: 600;
+}
+
+#featured-cars .more-details-btn:hover {
+  background: #171846;
+  color: #fff;
 }
