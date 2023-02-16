@@ -4,13 +4,13 @@
 
 
 	{#<div>
-		available now
-	</div>
-	{% for car in carsAvailableNow %}
-		<div>
-			{{car.name}}
+			available now
 		</div>
-	{% endfor %}#}
+		{% for car in carsAvailableNow %}
+			<div>
+				{{car.name}}
+			</div>
+		{% endfor %}#}
 
 	{% if not featuredCars is empty %}
 		{% include "components/home-featured-cars.twig" %}
@@ -18,5 +18,9 @@
 
 	{% if not cartypes is empty %}
 		{% include "components/home-car-types.twig" %}
+	{% endif %}
+
+	{% if not brands is empty %}
+		{% include "components/home-brands.twig" %}
 	{% endif %}
 {% endblock %}

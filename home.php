@@ -60,5 +60,9 @@ $context['cartypes'] = new Timber\PostQuery([
   'post_type' => 'car-types',
 ]);
 
+$context['brands'] = new Timber\PostQuery([
+  'post_type' => 'brands',
+]);
+
 //comment
 Timber::render('home.twig', $context);
