@@ -139,3 +139,30 @@ select {
     font-size: 0.8rem;
   }
 }
+
+/*Home page*/
+#car-types {
+  color: #fff;
+}
+
+.home-section-title {
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.home-section-title-highlighted {
+  font-weight: 700;
+}
+
+.home-section-title-container hr {
+  color: #fff;
+  border-top: 3px solid #fff;
+  opacity: 1;
+  margin: 10px auto;
+}
+
+.home-cartype-name {
+  font-weight: 500;
+  font-size: 1.2rem;
+}

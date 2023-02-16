@@ -27,19 +27,11 @@ $context['carsAvailableNow'] = new Timber\PostQuery([
   )
   //'meta_key' => 'featured',
   //'meta_value' => 1,
-  //'numberposts' => 1,
-  //'tax_query' => [
-  //    [
-  //        'taxonomy' => 'car-type',
-  //        'field' => 'slug',
-  //        'terms' => 'sports-car',
-  //    ],
-  //],
 ]);
 
 $context['featuredCars'] = new Timber\PostQuery([
   'post_type' => 'cars',
-    'numberposts' => 3,
+  'numberposts' => 3,
   'meta_query' => array(
     'relation' => 'AND',
     array(
@@ -53,14 +45,19 @@ $context['featuredCars'] = new Timber\PostQuery([
   )
 ]);
 
-$context['sportsCars'] = new Timber\PostQuery([
-  'tax_query' => [
-      [
-          'taxonomy' => 'car-type',
-          'field' => 'slug',
-          'terms' => 'sports-car',
-      ],
-  ],
+//$context['sportsCars'] = new Timber\PostQuery([
+//  'post_type' => 'cars',
+//  'tax_query' => [
+//    [
+//      'taxonomy' => 'car-type',
+//      'field' => 'slug',
+//      'terms' => 'sports-car',
+//    ],
+//  ],
+//]);
+
+$context['cartypes'] = new Timber\PostQuery([
+  'post_type' => 'car-types',
 ]);
 
 //comment
