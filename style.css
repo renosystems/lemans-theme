@@ -182,22 +182,25 @@ select {
 
 /*featured cars section*/
 .home-featured-car-wrapper {
-  min-height: 500px;
   position: relative;
 }
 
 .home-featured-car-image-wraper {
   z-index: 10;
   height: 200px !important;
+  position: absolute;
+  top: 0;
 }
 
 .home-featured-car-content-wraper {
   background-color: white;
-  min-height: 350px;
-  position: absolute;
+  height: 100%;
+  position: relative;
   width: 100%;
-  top: 150px;
-  padding-top: 15%;
+  /*top: 150px;*/
+  padding-top: 60px;
+  padding-bottom: 10px;
+  margin-top: 150px;
   box-sizing: border-box;
   box-shadow: 0px 2.24812px 5.62029px rgba(0, 0, 0, 0.160784);
   border-radius: 8px;
@@ -249,27 +252,41 @@ select {
   color: #fff;
 }
 
-#featured-cars-carousel .carousel-inner {
+/*#featured-cars-carousel .carousel-inner {
   height: 620px !important;
+}*/
+
+/*#featured-cars-carousel .home-featured-car-content-wraper {
+  padding-top: 60px;
+  margin-top: 120px;
+}*/
+
+#featured-cars .carousel-indicators {
+  bottom: -40px;
 }
 
-#featured-cars-carousel .home-featured-car-content-wraper {
-  top: 150px;
-  padding-top: 10%;
+#featured-cars .carousel-indicators [data-bs-target] {
+  width: 8px !important;
+  height: 8px !important;
+  margin-right: 7px !important;
+  background-color: #222222;
+  border: 1px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
 }
 
-@media (max-width: 540px) {
-  #featured-cars-carousel .carousel-inner {
-    height: 650px !important;
-  }
+#featured-cars .carousel-indicators .active {
+  background-color: #fff;
+}
 
+@media (max-width: 420px) {
   #featured-cars-carousel .home-featured-car-content-wraper {
-    top: 150px;
-    padding-top: 15%;
+    padding-top: 60px;
+    margin-top: 120px;
   }
 }
 
-@media (max-height: 740px) {
+/*@media (max-height: 740px) {
   #featured-cars-carousel .carousel-inner {
     height: 600px !important;
   }
@@ -278,7 +295,7 @@ select {
     top: 120px;
     padding-top: 15%;
   }
-}
+}*/
 
 /* BRANDS SECTION */
 #brands {
