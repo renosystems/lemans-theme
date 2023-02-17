@@ -13,7 +13,7 @@
 			<div class="swiper carTypesSwiper">
 				<div class="swiper-wrapper">
 					{% for type in cartypes %}
-						<div class="swiper-slide px-5">
+						<div class="swiper-slide">
 							<div class="d-flex flex-column h-100 justify-content-center align-items-center">
 								<img class="img-fluid" src="{{ Image(type.image).src }}" alt="{{ Image(type.image).title }}"/>
 								<p class="text-center home-cartype-name">{{type.carTypeName}}</p>
