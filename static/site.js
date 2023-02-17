@@ -20,6 +20,8 @@ jQuery(document).ready(function ($) {
 
   var brandsSwiper = new Swiper(".brandsSwiper", {
     freeMode: true,
+    slidesPerView: 2,
+    spaceBetween: 10,
     breakpoints: {
       // when window width is >= 320px
       320: {
