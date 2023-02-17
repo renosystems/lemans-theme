@@ -20,7 +20,7 @@
 
 		</div>
 
-		<div id="featured-cars-carousel" class="carousel slide d-lg-none" data-bs-ride="carousel">
+		<div id="featured-cars-carousel" class="carousel slide d-lg-none h-100" data-bs-ride="carousel">
 			<div class="carousel-indicators">
 				{% for car in featuredCars %}
 					<button type="button" data-bs-target="#featured-cars-carousel" data-bs-slide-to="{{loop.index - 1}}" class="{{loop.index - 1 == 0 ? 'active' : ''}}"></button>
@@ -28,7 +28,7 @@
 			</div>
 
 
-			<div class="carousel-inner">
+			<div class="carousel-inner h-100">
 				{% for car in featuredCars %}
 					{% set brand = car.meta('brand') %}
 					{% set specs = car.meta('specs') %}
