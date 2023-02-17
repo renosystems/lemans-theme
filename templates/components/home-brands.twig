@@ -1,11 +1,11 @@
-<div id="brands">
-	<div class="swipe-container px-5 d-flex justify-content-center align-items-center">
-		<div class="swipe-content">
+<div
+	id="brands">
+	<!-- Swiper -->
+	<div class="swiper brandsSwiper">
+		<div class="swiper-wrapper">
 			{% for brand in brands %}
-				<div class="swipe-content">
-					<div class="px-5">
-						<img class="img-fluid" src="{{ Image(brand.brand_logo).src }}" alt="{{ Image(brand.brand_logo).title }}"/>
-					</div>
+				<div class="swiper-slide px-5">
+					<img class="img-fluid" src="{{ Image(brand.brand_logo).src }}" alt="{{ Image(brand.brand_logo).title }}"/>
 				</div>
 			{% endfor %}
 		</div>

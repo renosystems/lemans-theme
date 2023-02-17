@@ -1,5 +1,5 @@
 <div id="car-types" class="bg-dark">
-	<div class="container-fluid px-12 py-4">
+	<div class="container-fluid py-4">
 		<div class="home-section-title-container row flex-column justify-content-center align-content-center">
 			<h3 class="text-center home-section-title">Browse By
 				<span class="home-section-title-highlighted">Car Types</span>
@@ -7,17 +7,34 @@
 			<hr class="col-2 col-md-1"/>
 		</div>
 
-		<div class="d-flex justify-content-center align-content-center px-5 swipe-container">
-			<div class="swipe-content">
-				{% for type in cartypes %}
-					<div class="swipe-content">
-						<div class="d-flex justify-content-center align-items-center">
-							<img class="img-fluid" src="{{ Image(type.image).src }}" alt="{{ Image(type.image).title }}"/>
+		<div
+			class="d-flex justify-content-center align-content-center px-5">
+			<!-- Swiper -->
+			<div class="swiper carTypesSwiper">
+				<div class="swiper-wrapper">
+					{% for type in cartypes %}
+						<div class="swiper-slide px-5">
+							<div class="d-flex flex-column h-100 justify-content-center align-items-center">
+								<img class="img-fluid" src="{{ Image(type.image).src }}" alt="{{ Image(type.image).title }}"/>
+								<p class="text-center home-cartype-name">{{type.carTypeName}}</p>
+							</div>
 						</div>
-						<p class="text-center home-cartype-name">{{type.carTypeName}}</p>
-					</div>
-				{% endfor %}
+					{% endfor %}
+				</div>
 			</div>
 		</div>
+
+		{#<div class="d-flex justify-content-center align-content-center px-5 swipe-container">
+							<div class="swipe-content">
+								{% for type in cartypes %}
+									<div class="swipe-content">
+										<div class="d-flex justify-content-center align-items-center">
+											<img class="img-fluid" src="{{ Image(type.image).src }}" alt="{{ Image(type.image).title }}"/>
+										</div>
+										<p class="text-center home-cartype-name">{{type.carTypeName}}</p>
+									</div>
+								{% endfor %}
+							</div>
+						</div>#}
 	</div>
 </div>
