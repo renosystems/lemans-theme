@@ -5,7 +5,7 @@
 		<div class="swiper-wrapper">
 			{% for brand in brands %}
 				<div class="swiper-slide px-5">
-					<img class="img-fluid" src="{{ Image(brand.brand_logo).src }}" alt="{{ Image(brand.brand_logo).title }}"/>
+					<img src="{{ Image(brand.brand_logo).src }}" alt="{{ Image(brand.brand_logo).title }}"/>
 				</div>
 			{% endfor %}
 		</div>
