@@ -97,8 +97,8 @@ select {
 
 @media (min-width: 576px) {
   #contact-form .modal-dialog {
-    width: 80vw;
-    max-width: 80vw;
+    width: 60vw;
+    max-width: 60vw;
   }
 }
 

@@ -1,0 +1,58 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<!-- form -->
+	<div id="contact-form" class="dark-bg">
+		<div class="container py-5">
+			<div class="d-flex flex-column " id="thank-you-message">
+				{% include "components/contact-thank-you.twig" %}
+			</div>
+			<div class="row justify-content-center contact-bg py-4 px-3 rounded">
+				<div class="col-md-6 d-none d-md-block">
+					<div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade h-100 carousel-bg rounded-3 d-flex flex-column justify-content-center" data-bs-ride="carousel">
+						<div class="carousel-inner mt-5">
+							<div class="carousel-item active  ">
+
+								<img class="contact-img" src="https://images.unsplash.com/photo-1624880056139-d1212d7ff347?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" class="d-block" alt="...">
+
+
+							</div>
+							<div class="carousel-item">
+
+								<img class="contact-img" src="https://images.unsplash.com/photo-1624880057596-c8f6c383cd92?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" class="d-block" alt="...">
+
+							</div>
+							<div class="carousel-item">
+
+								<img class="contact-img" src="https://images.unsplash.com/photo-1624880056660-5aa3d36ee1b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" class="d-block" alt="...">
+
+							</div>
+						</div>
+
+						<div class="d-flex flex-column fw-bold px-3 text-dark mt-4">
+							<div class="mb-1">
+								<i class="fa-solid fa-phone fa-xl mx-2"></i>17112</div>
+							<div>
+								<i class="fa-solid fa-envelope fa-xl mx-2"></i>support@lemans.com</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="d-flex flex-column ">
+						<div class="d-flex flex-column mb-3">
+							<div class="form-title">Contact Us</div>
+							<div>We're here to help you, send us your queries via the below form</div>
+						</div>
+						<div class="d-flex flex-column">
+							{{post.content}}
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
