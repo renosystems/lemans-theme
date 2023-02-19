@@ -424,3 +424,72 @@ select {
 .swiper-wrapper {
   align-items: center;
 }
+
+/* help */
+.help-icons-wrapper input[type="checkbox"] {
+  display: none;
+}
+.help-icons-wrapper label {
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Default State */
+.help-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  gap: 10px;
+}
+.help-icons a {
+  color: white;
+  display: inline-block;
+}
+.help-icons a:hover {
+  color: white;
+}
+
+.help-icons-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  bottom: 15vh;
+  right: 7vw;
+}
+
+.icon-wrapper {
+  color: white;
+  padding: 13px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: #ffac3a;
+  text-align: center;
+}
+
+.icon-wrapper.whatsapp {
+  background-color: #2cb742;
+  padding: 7px;
+}
+
+.icon-wrapper.messenger {
+  background-color: transparent;
+  padding: 0px;
+  width: 75px;
+  height: 75px;
+}
+.help-icons:has(+ input[type="checkbox"]:checked) {
+  visibility: hidden !important;
+}
+
+#lemans-location-map {
+  width: 100% !important;
+}
+
+#lemans-location-map iframe {
+  width: 100% !important;
+}
