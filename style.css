@@ -341,6 +341,68 @@ select {
   height: 100%;
 }
 
+/* WHY LEMANS SECTION */
+#why-lemans .divider {
+  border-inline-end: 1px solid #fff;
+  width: 0 !important;
+  height: 400px;
+}
+
+.why-lemans-title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.1rem;
+  opacity: 1;
+}
+
+.why-lemans-content {
+  background: #444444;
+  color: #fff;
+  border-radius: 20px;
+}
+
+#why-lemans .why-lemans-content p {
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 2;
+  margin-inline-end: 20px;
+}
+
+@media (max-width: 420px) {
+  #why-lemans .why-lemans-content p {
+    margin-inline-end: 0;
+  }
+}
+
+.advantage-img {
+  /*width: 40px;
+  height: 40px;*/
+  border: 2px solid #ffac3a;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.advantage-name {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.founder-name {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.founder-title {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #ffac3a;
+}
+
+.founder-description {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
 //swipper
 .swiper {
   width: 100%;
