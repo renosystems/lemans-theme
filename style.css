@@ -180,7 +180,7 @@ select {
 }
 
 .availableCarsSwipper .available-car-overlay p {
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 500;
 }
 
@@ -321,16 +321,20 @@ select {
   }
 }
 
-/*@media (max-height: 740px) {
-  #featured-cars-carousel .carousel-inner {
-    height: 600px !important;
-  }
+#featured-cars .view-allcars-btn {
+  width: 250px;
+  background-color: #171846;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border: 1px solid #171846;
+  cursor: pointer;
+}
 
-  #featured-cars-carousel .home-featured-car-content-wraper {
-    top: 120px;
-    padding-top: 15%;
-  }
-}*/
+#featured-cars .view-allcars-btn:hover {
+  background-color: #171840;
+
+}
 
 /* BRANDS SECTION */
 #brands {
