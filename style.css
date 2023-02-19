@@ -10,6 +10,12 @@
 body {
   font-family: "Poppins" !important;
 }
+/* header */
+.logo {
+  width: 150px !important;
+  height: 100px !important;
+}
+
 /* foooter */
 .dark-bg {
   background-color: #222222;
