@@ -149,6 +149,41 @@ select {
   width: 80%;
 }
 
+.availableCarsSwipper {
+  height: 400px;
+}
+
+.availableCarsSwipper .swiper-slide {
+  width: 30% !important;
+}
+
+@media (max-width: 420px) {
+  .availableCarsSwipper .swiper-slide {
+    width: 80% !important;
+  }
+}
+
+.availableCarsSwipper .available-car-hovered {
+  opacity: 0.3;
+}
+
+.availableCarsSwipper .available-car-overlay {
+  position: absolute;
+  bottom: 20px;
+  z-index: 9;
+  color: #fff;
+}
+
+.availableCarsSwipper .available-car-overlay h5 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.availableCarsSwipper .available-car-overlay p {
+  font-size: .9rem;
+  font-weight: 500;
+}
+
 /* CAR TYPES */
 #car-types {
   color: #fff;

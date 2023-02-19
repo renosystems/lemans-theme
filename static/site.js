@@ -61,4 +61,39 @@ jQuery(document).ready(function ($) {
       },
     },
   });
+
+  var availableCarsSwipper = new Swiper(".availableCarsSwipper", {
+    freeMode: true,
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      // when window width is >= 480px
+      480: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      // when window width is >= 640px
+      640: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+      },
+    },
+  });
+
+  //available cars overlay on hover feature---------------------//
+  $(".home-available-car").on("mouseover", function (e) {
+    this.classList.add("available-car-hovered");
+    $(`#${this.id}-overlay`)[0].classList.remove("d-none");
+
+  });
+
+  $(".home-available-car").on("mouseleave", function () {
+    this.classList.remove("available-car-hovered");
+    $(`#${this.id}-overlay`)[0].classList.add("d-none");
+
+  });
+  //-----------------------------------------------------------//
 });

@@ -1,0 +1,59 @@
+<div id="availableNowCars" class="py-5">
+	<div class="home-section-title-container row flex-column justify-content-center align-content-center pb-4 w-100">
+		<h3 class="text-center home-section-title">Available
+			<span class="home-section-title-highlighted">Cars Now</span>
+		</h3>
+		<hr class="col-2 col-md-1"/>
+	</div>
+	{% set structuredCarsAvailableNow = {}  %}
+	{% set count = 1 %}
+
+	{% for car in carsAvailableNow %}
+		{% if count == 1 %}
+			{% set structuredCarsAvailableNow = structuredCarsAvailableNow|merge({(loop.index): {"size": 1, "cars": [car]}}) %}
+			{% set count = 2 %}
+		{% elseif count == 2 %}
+			{% set structuredCarsAvailableNow = structuredCarsAvailableNow|merge({(loop.index):{"size": 2, "cars": [car, carsAvailableNow[loop.index]]}}) %}
+			{% set count = 3 %}
+		{% elseif count == 3 %}
+			{% set count = 1 %}
+		{% endif %}
+	{% endfor %}
+
+	<!-- Swiper -->
+	<div class="swiper availableCarsSwipper">
+		<div class="swiper-wrapper h-100">
+			{% for slide in structuredCarsAvailableNow %}
+				<div class="swiper-slide h-100">
+					{% if slide.size == 1 %}
+						<img id="available-car-{{loop.index}}" src="{{ Image(slide.cars[0].available_now_image).src }}" alt="{{ Image(slide.cars[0].available_now_image).title }}" class="w-100 h-100 home-available-car"/>
+						<div id="available-car-{{loop.index}}-overlay" class="available-car-overlay d-none text-center">
+							<h5>{{slide.cars[0].model}}</h5>
+							<p>{{slide.cars[0].excert}}</p>
+						</div>
+					{% else %}
+						<div class="h-100 w-100">
+							<div class="{{ slide.cars[1] ? 'h-50' : 'h-100' }} w-100 position-relative">
+								<img id="available-car-{{loop.index * 1}}" src="{{ Image(slide.cars[0].available_now_image).src }}" alt="{{ Image(slide.cars[0].available_now_image).title }}" class="w-100 h-100 home-available-car"/>
+								<div id="available-car-{{loop.index * 1}}-overlay" class="available-car-overlay w-100 d-none text-center">
+									<h5>{{slide.cars[0].model}}</h5>
+									<p>{{slide.cars[0].excert}}</p>
+								</div>
+							</div>
+
+							{% if slide.cars[1] %}
+								<div class="h-50 w-100 position-relative">
+									<img id="available-car-{{loop.index * 2}}" src="{{ Image(slide.cars[1].available_now_image).src }}" alt="{{ Image(slide.cars[1].available_now_image).title }}" class="w-100 h-100 home-available-car"/>
+									<div id="available-car-{{loop.index * 2}}-overlay" class="available-car-overlay w-100 d-none text-center">
+										<h5>{{slide.cars[1].model}}</h5>
+										<p>{{slide.cars[1].excert}}</p>
+									</div>
+								</div>
+							{% endif %}
+						</div>
+					{% endif %}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>

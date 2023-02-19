@@ -2,16 +2,11 @@
 
 
 {% block content %}
-	<div
-		class="bg-dark">
-		{#<div>
-																										available now
-																									</div>
-																									{% for car in carsAvailableNow %}
-																										<div>
-																											{{car.name}}
-																										</div>
-																									{% endfor %}#}
+	<div class="bg-dark">
+
+		{% if not carsAvailableNow is empty %}
+			{% include "components/home-available-cars.twig" %}
+		{% endif %}
 
 		{% if not featuredCars is empty %}
 			{% include "components/home-featured-cars.twig" %}
