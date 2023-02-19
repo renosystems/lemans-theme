@@ -1,5 +1,221 @@
 {% extends "base.twig" %}
 {% block content %}
-	{% set car = post %}
-	{% include "components/home-featured-car.twig" %}
+{% set car = post %}
+<div class="bg-dark">
+	<div class="container ">
+		<div class="row py-4 px-3 px-md-0">
+			<div class="col-12 col-md-6">
+				<div>
+					<!-- main carousel -->
+					<div id="carouselExample" class="carousel slide">
+						<div class="carousel-inner rounded-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+							<div class="carousel-item active" data-bs-slide-to="0" data-bs-target="#carouselModal">
+								<img src="https://images.unsplash.com/photo-1577496549771-036979fd95e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+									class="d-block w-100 car-carousel-img" alt="car">
+							</div>
+							<div class="carousel-item" data-bs-slide-to="1" data-bs-target="#carouselModal">
+								<img src="https://images.unsplash.com/photo-1577496549804-8b05f1f67338?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+									class="d-block w-100 car-carousel-img" alt="car">
+							</div>
+							<div class="carousel-item" data-bs-slide-to="2" data-bs-target="#carouselModal">
+								<img src="https://images.unsplash.com/photo-1577496550006-f24a50e9d50c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80"
+									class="d-block w-100 car-carousel-img" alt="car">
+							</div>
+							<div class="carousel-item" data-bs-slide-to="3" data-bs-target="#carouselModal">
+								<img src="https://images.unsplash.com/photo-1542754468-350a7ab4d250?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+									class="d-block w-100 car-carousel-img" alt="car">
+							</div>
+							<div class="carousel-item" data-bs-slide-to="4" data-bs-target="#carouselModal">
+								<img src="https://images.unsplash.com/photo-1568074532275-b57393b08c64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=800"
+									class="d-block w-100 car-carousel-img" alt="car">
+							</div>
+							<div class="carousel-item" data-bs-slide-to="5" data-bs-target="#carouselModal">
+								<img src=" https://images.unsplash.com/photo-1614422723810-b9410191b990?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
+									class="d-block w-100 car-carousel-img" alt="car">
+							</div>
+						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+							data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+							data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
+					</div>
+					<!-- main carousel end -->
+				</div>
+				<!-- image gallery -->
+				<div class="row car-details-gallery my-3 gx-3 justify-content-start align-items-start">
+					<div class="col-3 mb-3">
+
+						<img data-bs-target="#carouselExample" data-bs-slide-to="0" class="rounded-1 car-gallery-img"
+							src="https://images.unsplash.com/photo-1577496549771-036979fd95e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+							alt="">
+					</div>
+					<div class="col-3 mb-3">
+						<img data-bs-target="#carouselExample" data-bs-slide-to="1" class="rounded-1 car-gallery-img"
+							src="https://images.unsplash.com/photo-1577496549804-8b05f1f67338?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+							alt="">
+					</div>
+					<div class="col-3 mb-3"> <img data-bs-target="#carouselExample" data-bs-slide-to="2"
+							class="rounded-1 car-gallery-img"
+							src="https://images.unsplash.com/photo-1577496550006-f24a50e9d50c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80"
+							alt=""></div>
+
+					<div class="col-3 mb-3"> <img class="rounded-1 car-gallery-img" data-bs-target="#carouselExample"
+							data-bs-slide-to="3"
+							src="https://images.unsplash.com/photo-1542754468-350a7ab4d250?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+							alt=""></div>
+					<div class="col-3 mb-3"> <img class="rounded-1 car-gallery-img" data-bs-target="#carouselExample"
+							data-bs-slide-to="4"
+							src="https://images.unsplash.com/photo-1568074532275-b57393b08c64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+							alt=""></div>
+
+					<div class="col-3 mb-3">
+						<img class="rounded-1 car-gallery-img" data-bs-target="#carouselExample" data-bs-slide-to="5"
+							src="https://images.unsplash.com/photo-1614422723810-b9410191b990?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
+							alt="">
+					</div>
+				</div>
+				<!-- image gallery end -->
+			</div>
+			<!-- car details card -->
+			<div class="col-12 col-md-6">
+				<div class="car-details-card">
+
+					<div class="d-flex flex-row justify-content-between align-items-center">
+						<div class="d-flex flex-row align-items-center mb-1 w-100"><img
+								src="{{ Image(car.meta('brand').brand_logo).src }}"
+								alt="{{ Image(brand.brand_logo).title }}">
+							<div class="car-details-title mx-3">{{car.meta('brand').brand_name}}</div>
+						</div>
+						<div class="car-details-tag">New</div>
+					</div>
+					<div class="car-details-model">{{car.model}}</div>
+
+					<div class="d-flex flex-column align-items-start py-2 ">
+						<div class="car-details-subtitle ">Specs</div>
+
+						<div class="d-flex flex-row  justify-content-betweem justify-content-md-start gap w-100">
+							{% for spec in car.meta('specs')|slice(0,2)%}
+							<div class="d-flex flex-row">
+								<div class="car-details-spec mb-1"><img src="{{ Image(spec.spec_icon).src }}"
+										alt="{{ Image(car.spec_icon).title }}">
+									{{spec.spec_name}}:
+									{{spec.spec_value}}</div>
+							</div>
+							{%endfor%}
+
+						</div>
+						<div class="d-flex flex-row  justify-content-betweem justify-content-md-start gap w-100">
+							{% for spec in car.meta('specs')|slice(2,2)%}
+							<div class="d-flex flex-row">
+								<div class="car-details-spec mb-1"><img src="{{ Image(spec.spec_icon).src }}"
+										alt="{{ Image(car.spec_icon).title }}">
+									{{spec.spec_name}}:
+									{{spec.spec_value}}</div>
+							</div>
+							{%endfor%}
+
+						</div>
+
+						<a href="" class="car-details-btn ">View More <i class="fa-solid fa-angles-right xs"></i></a>
+					</div>
+					<div class="d-flex flex-column">
+						<div class="car-details-subtitle  ">
+							Description
+						</div>
+						<div class="card-details-description">
+							Combining everyday capability alongside a confident off-road experience.
+							Range Rover Evoque comes equipped with intelligent Terrain Response 2
+							and All Terrain Progress Control, allowing you to handle any change in
+							weather or terrain with ease.
+						</div>
+						<div id="featured-cars" class="align-self-end mt-5">
+							<a href="" class="request-now-btn py-3 px-4 small"> Request your Car</a>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+			<!-- car details card end -->
+
+			<!-- modal -->
+			<div class="modal" tabindex="-1" id="exampleModal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<!-- carousel modal -->
+							<div id="carouselModal" class="carousel slide">
+								<div class="carousel-indicators">
+									<button type="button" data-bs-target="#carouselModal" data-bs-slide-to="0"
+										class="active" aria-current="true" aria-label="Slide 1"></button>
+									<button type="button" data-bs-target="#carouselModal" data-bs-slide-to="1"
+										aria-label="Slide 2"></button>
+									<button type="button" data-bs-target="#carouselModal" data-bs-slide-to="2"
+										aria-label="Slide 3"></button>
+									<button type="button" data-bs-target="#carouselModal" data-bs-slide-to="3"
+										aria-label="Slide 2"></button>
+									<button type="button" data-bs-target="#carouselModal" data-bs-slide-to="4"
+										aria-label="Slide 2"></button>
+									<button type="button" data-bs-target="#carouselModal" data-bs-slide-to="5"
+										aria-label="Slide 2"></button>
+								</div>
+								<button type="button" class="btn-close" data-bs-dismiss="modal"
+									aria-label="Close"></button>
+								<div class="carousel-inner rounded-3">
+									<div class="carousel-item active">
+										<img src="https://images.unsplash.com/photo-1577496549771-036979fd95e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+											class="d-block car-modal-img" alt="car">
+									</div>
+									<div class="carousel-item">
+										<img src="https://images.unsplash.com/photo-1577496549804-8b05f1f67338?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+											class="d-block car-modal-img" alt="car">
+									</div>
+									<div class="carousel-item">
+										<img src="https://images.unsplash.com/photo-1577496550006-f24a50e9d50c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80"
+											class="d-block car-modal-img" alt="car">
+									</div>
+
+									<div class="carousel-item">
+										<img src="https://images.unsplash.com/photo-1542754468-350a7ab4d250?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+											class="d-block car-modal-img" alt="car">
+									</div>
+
+									<div class="carousel-item">
+										<img src="https://images.unsplash.com/photo-1568074532275-b57393b08c64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=800"
+											class="d-block car-modal-img" alt="car">
+									</div>
+									<div class="carousel-item">
+										<img src=" https://images.unsplash.com/photo-1614422723810-b9410191b990?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
+											class="d-block car-modal-img" alt="car">
+									</div>
+
+
+								</div>
+								<button class="carousel-control-prev" type="button" data-bs-target="#carouselModal"
+									data-bs-slide="prev">
+									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									<span class="visually-hidden">Previous</span>
+								</button>
+								<button class="carousel-control-next" type="button" data-bs-target="#carouselModal"
+									data-bs-slide="next">
+									<span class="carousel-control-next-icon" aria-hidden="true"></span>
+									<span class="visually-hidden">Next</span>
+								</button>
+							</div>
+							<!-- modal carousel end -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- modal end -->
+		</div>
+
+	</div>
+</div>
 {% endblock %}
