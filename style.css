@@ -10,6 +10,12 @@
 body {
   font-family: "Poppins" !important;
 }
+/* header */
+.logo {
+  width: 150px !important;
+  height: 100px !important;
+}
+
 /* foooter */
 .dark-bg {
   background-color: #222222;
@@ -91,8 +97,8 @@ select {
 
 @media (min-width: 576px) {
   #contact-form .modal-dialog {
-    width: 80vw;
-    max-width: 80vw;
+    width: 60vw;
+    max-width: 60vw;
   }
 }
 
@@ -336,6 +342,68 @@ select {
   height: 100%;
 }
 
+/* WHY LEMANS SECTION */
+#why-lemans .divider {
+  border-inline-end: 1px solid #fff;
+  width: 0 !important;
+  height: 400px;
+}
+
+.why-lemans-title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.1rem;
+  opacity: 1;
+}
+
+.why-lemans-content {
+  background: #444444;
+  color: #fff;
+  border-radius: 20px;
+}
+
+#why-lemans .why-lemans-content p {
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 2;
+  margin-inline-end: 20px;
+}
+
+@media (max-width: 420px) {
+  #why-lemans .why-lemans-content p {
+    margin-inline-end: 0;
+  }
+}
+
+.advantage-img {
+  /*width: 40px;
+  height: 40px;*/
+  border: 2px solid #ffac3a;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.advantage-name {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.founder-name {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.founder-title {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #ffac3a;
+}
+
+.founder-description {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
 //swipper
 .swiper {
   width: 100%;
@@ -350,6 +418,75 @@ select {
 
 .swiper-wrapper {
   align-items: center;
+}
+
+/* help */
+.help-icons-wrapper input[type="checkbox"] {
+  display: none;
+}
+.help-icons-wrapper label {
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Default State */
+.help-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  gap: 10px;
+}
+.help-icons a {
+  color: white;
+  display: inline-block;
+}
+.help-icons a:hover {
+  color: white;
+}
+
+.help-icons-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  bottom: 15vh;
+  right: 7vw;
+}
+
+.icon-wrapper {
+  color: white;
+  padding: 13px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: #ffac3a;
+  text-align: center;
+}
+
+.icon-wrapper.whatsapp {
+  background-color: #2cb742;
+  padding: 7px;
+}
+
+.icon-wrapper.messenger {
+  background-color: transparent;
+  padding: 0px;
+  width: 75px;
+  height: 75px;
+}
+.help-icons:has(+ input[type="checkbox"]:checked) {
+  visibility: hidden !important;
+}
+
+#lemans-location-map {
+  width: 100% !important;
+}
+
+#lemans-location-map iframe {
+  width: 100% !important;
 }
 
 /* car-details*/

@@ -4,18 +4,7 @@
 {% endblock %}
 
 <!-- navbar -->
-<div class="bg-white">
-	<div class="container">
-		<div class="row justify-content-center py-2">
-			<div class="d-flex justify-content-between">
-				<div>
-					<a href=""><img class="w-75" src="{{ site.theme.link }}/static/logo_new.png" alt="logo"></a>
-				</div>
-				<div></div>
-			</div>
-		</div>
-	</div>
-</div>
+{% include "components/Header.twig" %}
 
 {% block content %}
 	Sorry, no content
