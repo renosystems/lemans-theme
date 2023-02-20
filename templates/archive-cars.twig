@@ -1,0 +1,7 @@
+{% extends "index.twig" %}
+
+{% block content %}
+	{% for car in posts %}
+		<h1>{{car.model}}</h1>
+	{% endfor %}
+{% endblock %}
