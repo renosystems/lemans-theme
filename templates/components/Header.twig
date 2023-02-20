@@ -5,12 +5,12 @@
 <!-- navbar -->
 <div id="header" class="bg-white">
 	<div class="container">
-		<div class="row justify-content-center">
+		<div class="row justify-content-center d-none d-lg-flex">
 			<div class="d-flex justify-content-start">
 				<div>
 					<a href="{{site.url}}"><img class="img-fluid logo" src="{{ site.theme.link }}/static/images/logo-blue.png" alt="logo"></a>
 				</div>
-				<div class="px-5 d-flex justify-content-start align-items-center">
+				<div class="d-flex justify-content-start align-items-center">
 					<ul class="nav nav-pills h-100 align-items-center">
 						{% for item in menu.items %}
 							<li class="nav-item h-100 d-flex align-items-center">
@@ -21,5 +21,32 @@
 				</div>
 			</div>
 		</div>
+
+    <div class="justify-content-between align-items-center d-flex d-lg-none">
+				<div id="navbar-logo">
+					<a href="{{site.url}}"><img class="img-fluid logo" src="{{ site.theme.link }}/static/images/logo-blue.png" alt="logo"></a>
+				</div>
+        <div id="navbar-search" class="d-none py-3">
+          <form  >
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        </form>
+        </div>
+        <div>
+          <button id="main-menu-toggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars" id="collapsed-navbar-icon"></i>
+            <i class="fa-sharp fa-solid fa-xmark d-none" id="uncollapsed-navbar-icon"></i>
+          </button>
+        </div>
+		</div>
 	</div>
+
+  <div class="collapse navbar-collapse w-100 bg-white" id="main-navbar">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      {% for item in menu.items %}
+        <li class="nav-item">
+          <a class="py-3 px-5 nav-link {{ item.current ? 'active' : ''}}" aria-current="page" href="{{item.url}}">{{item.title}}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>

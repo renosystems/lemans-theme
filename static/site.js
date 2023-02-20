@@ -87,13 +87,33 @@ jQuery(document).ready(function ($) {
   $(".home-available-car").on("mouseover", function (e) {
     this.classList.add("available-car-hovered");
     $(`#${this.id}-overlay`)[0].classList.remove("d-none");
-
   });
 
   $(".home-available-car").on("mouseleave", function () {
     this.classList.remove("available-car-hovered");
     $(`#${this.id}-overlay`)[0].classList.add("d-none");
-
   });
+  //-----------------------------------------------------------//
+
+  //navbar---------------------//
+  let navbarToggler = $("#main-menu-toggler");
+  if (navbarToggler) {
+    $("#main-menu-toggler").on("click", function () {
+      const isCollapsed = this.classList.contains("collapsed");
+      if (isCollapsed) {
+        $(`#collapsed-navbar-icon`)[0].classList.remove("d-none");
+        $(`#navbar-logo`)[0].classList.remove("d-none");
+        $(`#navbar-search`)[0].classList.add("d-none");
+        $(`#uncollapsed-navbar-icon`)[0].classList.add("d-none");
+      } else {
+        $(`#uncollapsed-navbar-icon`)[0].classList.remove("d-none");
+        $(`#navbar-logo`)[0].classList.add("d-none");
+        $(`#navbar-search`)[0].classList.remove("d-none");
+        $(`#collapsed-navbar-icon`)[0].classList.add("d-none");
+      }
+      //$(`#${this.id}-overlay`)[0].classList.add("d-none");
+    });
+  }
+
   //-----------------------------------------------------------//
 });
