@@ -1,7 +1,43 @@
 {% extends "index.twig" %}
 
 {% block content %}
-	{% for car in posts %}
-		<h1>{{car.model}}</h1>
-	{% endfor %}
+{% for car in posts %}
+<div class="availble-cars-bg">
+
+	<div class="container">
+		<div class="row py-4">
+			<div class="col-3 col-md-2">
+				<div class="d-flex flex-column justify-content-start align-items-center car-filter px-2 py-3">
+					<div class="car-filter-type fw-bold">
+						Browse by car type
+					</div>
+					{% for type in cartypes %}
+					<a href="" class="text-decoration-none">
+						<div class="d-flex flex-column align-items-center">
+							<img src="{{ Image(type.image).src }}" alt="{{ Image(type.image).title }}"
+								class="car-filter-img">
+							<p class="car-filter-type">{{type.carTypeName}}</p>
+						</div>
+					</a>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="col-9 col-md-10">
+				<div class="row justify-content-around gx-3 " id="cars-listing-wrapper">
+
+					{% for car in featuredCars %}
+					{% set brand = car.meta('brand') %}
+					{% set specs = car.meta('specs') %}
+					<div class="col-12 col-md-4">
+						{% include "components/home-featured-car.twig" %}
+					</div>
+
+					{% endfor %}
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endfor %}
 {% endblock %}

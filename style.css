@@ -632,6 +632,93 @@ img {
   position: static;
   margin: 0px !important;
 }
+
+/* availble cars listing */
+
+.availble-cars-bg {
+  background-color: #f5f5f5;
+}
+
+.car-filter {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0px 1.90327px 4.75819px rgba(0, 0, 0, 0.160784);
+}
+
+.car-filter-type {
+  font-size: 0.8rem;
+  text-align: center;
+  color: black;
+}
+
+.car-filter-img {
+  width: 50%;
+}
+
+#cars-listing-wrapper .home-featured-car-content-wraper {
+  background-color: white;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  /*top: 150px;*/
+  padding-top: 60px;
+  padding-bottom: 10px;
+  margin-top: 100px;
+}
+
+#cars-listing-wrapper
+  .home-featured-car-wrapper
+  .home-featured-car-image-wraper {
+  top: -20px;
+}
+
+#cars-listing-wrapper .brand-name {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#cars-listing-wrapper .featured-car-model {
+  font-size: 0.8rem;
+}
+
+#cars-listing-wrapper .specs-title {
+  font-size: 0.8rem;
+  color: #171846;
+  font-weight: 600;
+}
+
+#cars-listing-wrapper .featured-specs-detail {
+  font-size: 0.6rem;
+}
+
+#cars-listing-wrapper .more-details-btn {
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 4px;
+  border: 3px solid #171846;
+  color: #171846;
+  font-weight: 600;
+  font-size: 0.7rem;
+  padding: 0.7em 1em !important;
+}
+
+#cars-listing-wrapper .request-now-btn {
+  box-sizing: border-box;
+  background: #171846;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.7rem;
+  padding: 0.7em 1em !important;
+}
+
+#cars-listing-wrapper .specs-title + div div div {
+  justify-content: flex-start !important;
+}
+
+#cars-listing-wrapper .specs-title + div div div img {
+  width: 18px;
+}
 @media (max-width: 764px) {
   html {
     font-size: 0.8rem;
