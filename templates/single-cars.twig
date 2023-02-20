@@ -78,15 +78,19 @@
 						</div>
 						<div class="d-flex flex-row  justify-content-betweem justify-content-md-start gap w-100">
 							{% for spec in car.meta('specs')|slice(2,2)%}
+							{% if spec.featured %}
 							<div class="d-flex flex-row">
 								<div class="car-details-spec mb-1"><img src="{{ Image(spec.spec_icon).src }}"
 										alt="{{ Image(car.spec_icon).title }}">
 									{{spec.spec_name}}:
 									{{spec.spec_value}}</div>
 							</div>
+							{%endif%}
 							{%endfor%}
 						</div>
-						<a href="" class="car-details-btn ">View More <i class="fa-solid fa-angles-right xs"></i></a>
+						<a href="" class="car-details-btn" data-bs-toggle="modal" data-bs-target="#specsModal">View
+							More
+							<i class="fa-solid fa-angles-right xs"></i></a>
 					</div>
 					<div class="d-flex flex-column">
 						<div class="car-details-subtitle  ">
@@ -104,8 +108,34 @@
 				</div>
 			</div>
 			<!-- car details card end -->
-			<!-- modal -->
-			<div class="modal" tabindex="-1" id="exampleModal">
+
+			<!-- specs modal -->
+
+			<div class="modal fade" id="specsModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+				aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h1 class="modal-title fs-5" id="specsModalLabel">Specs</h1>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<div class="d-flex flex-column">
+								{% for spec in car.meta('specs')%}
+								<div class="car-details-spec py-2 border-bottom border-dark-subtle mb-1"><img
+										src="{{ Image(spec.spec_icon).src }}" alt="{{ Image(car.spec_icon).title }}">
+									{{spec.spec_name}}:
+									{{spec.spec_value}}</div>
+								{%endfor%}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- specs modal end -->
+
+			<!-- image modal -->
+			<div class="modal fade" tabindex="-1" id="exampleModal">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-body">
@@ -156,7 +186,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- modal end -->
+			<!-- image modal end -->
 		</div>
 
 	</div>
