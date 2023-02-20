@@ -13,4 +13,4 @@ $timber_post     = Timber::query_post();
 $context['post'] = $timber_post;
 
 //comment
-Timber::render('contact-us.twig', $context);
+Timber::render('page-contact-us.twig', $context);
