@@ -1,6 +1,95 @@
 {% extends "base.twig" %}
 {% block content %}
-	{% set whyLemans = post.meta('why_lemans') %}
-	<h1>{{whyLemans.title}}</h1>
-	>
+{% set whyLemans = post.meta('why_lemans') %}
+{% set advantages = whyLemans.meta('advantages') %}
+{% set founder = whyLemans.meta('founder') %}
+<div class="bg-dark">
+	<div class="container py-3 px-4">
+		<div class="row justify-content-center text-white mb-3">
+			<div class="col-12 text-center">
+				<h2 class="title-underline text-center">About Le Mans</h2>
+			</div>
+		</div>
+		<div class="row text-white">
+			<div class="col-12 col-md-5">
+				<div class="about-lemans-left">
+					We are a Trusted Name in The Importing cars IndustryThis statement will be converted to
+					this:Visited by Thousands of Car Buyers Every Month!Testimonials will be added in future
+				</div>
+			</div>
+			<div class="col-12 col-md-7">
+				<div class="about-lemans-right">
+					With almost 15 years of experience in both the importation and the cars industries, Lemans Group
+					became a trusted and pioneering name in the world of importing cars. Our clients have been and
+					will always be our top priority. That is why everything we do, from our services to the type of
+					cars we import, is always done with our customers’ satisfaction in mind. Our goal for the near
+					future of Lemans Group is to become the biggest online garage of heavy machinery imported from
+					all over the world.
+				</div>
+			</div>
+		</div>
+		<div class="row justify-content-center text-white">
+			<div class="col-8">
+				<hr>
+			</div>
+		</div>
+
+		<div class="row justify-content-start text-white mb-4">
+			<div class="col-12 col-md-6 mb-3">
+				<h2 class="about-us-subtitle"> {{whyLemans.title}}</h2>
+			</div>
+
+			<div class="col-12 col-md-8 why-lemans">{{whyLemans.description}}</div>
+		</div>
+
+		<div class="row justify-content-center text-white why-lemans-container mb-5">
+
+			{% for advantage in advantages %}
+			<div class="col-6 col-md-3 justify-content-baseline d-flex flex-column align-items-center mb-3">
+				<div class="why-lemans-item">
+					<img class="img-fluid advantage-img mb-2" src="{{ Image(advantage.advantage_icon).src }}"
+						alt="{{ Image(advantage.advantage_icon).title }}" />
+					<div class="item-title">{{advantage.advantage}}</div>
+					<div class="item-details">{{advantage.description}}</div>
+
+				</div>
+			</div>
+			{%endfor%}
+
+		</div>
+
+
+		<div class="row justify-content-center text-white">
+			<div class="col-12 text-center mb-4">
+				<h2>Meet Our <span class="managers">Managers</span> </h2>
+			</div>
+		</div>
+
+		<div class="row text-white flex-column-reverse flex-md-row">
+
+			<div class="col-12 col-md-7">
+				<div>
+					<div class="manager-name">
+						{{founder.founder_name}}
+					</div>
+
+					<div class="manager-title">{{founder.founder_title}}</div>
+					<div class="managers-details">
+						{{founder.description}}
+					</div>
+				</div>
+			</div>
+
+			<div class="col-12 col-md-5 d-flex flex-column align-items-center mt-1 mb-3">
+
+				<img class="manager-img" width="100%" src="{{ Image(founder.founder_photo).src }}"
+					alt="{{ Image(founder.founder_photo).title }}">
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
 {% endblock %}

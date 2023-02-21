@@ -1,7 +1,5 @@
 {% extends "index.twig" %}
-
 {% block content %}
-{% for car in posts %}
 <div class="availble-cars-bg">
 
 	<div class="container">
@@ -12,11 +10,11 @@
 						Browse by car type
 					</div>
 					{% for type in cartypes %}
-					<a href="" class="text-decoration-none">
+					<a href="/car-type/{{type.slug}}" class="text-decoration-none">
 						<div class="d-flex flex-column align-items-center">
 							<img src="{{ Image(type.image).src }}" alt="{{ Image(type.image).title }}"
 								class="car-filter-img">
-							<p class="car-filter-type">{{type.carTypeName}}</p>
+							<p class="car-filter-type">{{type.name}}</p>
 						</div>
 					</a>
 					{% endfor %}
@@ -25,9 +23,14 @@
 			<div class="col-9 col-md-10">
 				<div class="row justify-content-around gx-3 " id="cars-listing-wrapper">
 
-					{% for car in featuredCars %}
-					{% set brand = car.meta('brand') %}
+					{% for car in posts %}
 					{% set specs = car.meta('specs') %}
+					{% set brand = null %}
+					{% for term in car.terms %}
+					{% if term.taxonomy == "brand" %}
+					{% set brand = term %}
+					{% endif %}
+					{% endfor %}
 					<div class="col-12 col-md-4">
 						{% include "components/home-featured-car.twig" %}
 					</div>
@@ -39,5 +42,4 @@
 		</div>
 	</div>
 </div>
-{% endfor %}
 {% endblock %}
