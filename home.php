@@ -45,17 +45,6 @@ $context['featuredCars'] = new Timber\PostQuery([
   )
 ]);
 
-//$context['sportsCars'] = new Timber\PostQuery([
-//  'post_type' => 'cars',
-//  'tax_query' => [
-//    [
-//      'taxonomy' => 'car-type',
-//      'field' => 'slug',
-//      'terms' => 'sports-car',
-//    ],
-//  ],
-//]);
-
 $context['cartypes'] = Timber::get_terms([
   'taxonomy' => 'car-type',
   'hide_empty' => false,
