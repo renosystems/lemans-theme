@@ -688,6 +688,10 @@ img {
   top: -10%;
 }
 
+#cars-listing-wrapper .img-fluid {
+  max-width: 89%;
+  height: 97%;
+}
 #cars-listing-wrapper .home-featured-car-wrapper {
   height: 90%;
 }
