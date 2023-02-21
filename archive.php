@@ -39,6 +39,8 @@ if (is_day()) {
     ]);
   }
   array_unshift($templates, 'archive-' . get_post_type() . '.twig');
+} elseif (is_tax('car-type')) {
+  array_unshift($templates, 'taxonomy-cartype' . '.twig');
 }
 
 $context['posts'] = new Timber\PostQuery();

@@ -10,6 +10,11 @@
 body {
   font-family: "Poppins" !important;
 }
+
+a:link {
+  text-decoration: none !important;
+}
+
 /* header */
 .logo {
   width: 150px !important;
@@ -227,6 +232,7 @@ select {
 .home-cartype-name {
   font-weight: 500;
   font-size: 1.2rem;
+  color: #fff;
 }
 
 #car-types img {
