@@ -3,7 +3,7 @@
 
 {% block content %}
 	<div class="bg-dark">
-
+    {{post.content}}
 		{% if not carsAvailableNow is empty %}
 			{% include "components/home-available-cars.twig" %}
 		{% endif %}

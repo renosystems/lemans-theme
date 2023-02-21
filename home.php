@@ -45,34 +45,25 @@ $context['featuredCars'] = new Timber\PostQuery([
   )
 ]);
 
-//$context['sportsCars'] = new Timber\PostQuery([
-//  'post_type' => 'cars',
-//  'tax_query' => [
-//    [
-//      'taxonomy' => 'car-type',
-//      'field' => 'slug',
-//      'terms' => 'sports-car',
-//    ],
-//  ],
-//]);
-
-$context['cartypes'] = new Timber\PostQuery([
-  'post_type' => 'car-types',
+$context['cartypes'] = Timber::get_terms([
+  'taxonomy' => 'car-type',
+  'hide_empty' => false,
 ]);
 
-$context['brands'] = new Timber\PostQuery([
-  'post_type' => 'brands',
+$context['brands'] = Timber::get_terms([
+  'taxonomy' => 'brand',
+  'hide_empty' => false,
 ]);
 
 $context['whyLemansPosts'] = new Timber\PostQuery([
   'post_type' => 'post',
   'tax_query' => array(
     array(
-        'taxonomy' => 'post_tag',
-        'field' => 'name',
-        'terms' => 'why-lemans',
+      'taxonomy' => 'post_tag',
+      'field' => 'name',
+      'terms' => 'why-lemans',
     )
-)
+  )
 ]);
 
 //comment

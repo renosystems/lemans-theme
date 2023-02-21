@@ -9,8 +9,15 @@
 
 		<div class="row row-cols-1 row-cols-md-3 justify-content-around px-5 pb-5 d-lg-flex d-none featured-car-desktop">
 			{% for car in featuredCars %}
-				{% set brand = car.meta('brand') %}
+
 				{% set specs = car.meta('specs') %}
+				{% set brand = null %}
+
+				{% for term in car.terms %}
+					{% if term.taxonomy == "brand" %}
+						{% set brand = term %}
+					{% endif %}
+				{% endfor %}
 
 				<div class="col">
 					{% include "components/home-featured-car.twig" %}
@@ -30,9 +37,16 @@
 
 			<div class="carousel-inner h-100">
 				{% for car in featuredCars %}
-					{% set brand = car.meta('brand') %}
 					{% set specs = car.meta('specs') %}
-					<div class="carousel-item px-5 {{ loop.index - 1 == 0 ? 'active' : '' }}" data-bs-interval="7000" >
+
+					{% set brand = null %}
+					{% for term in car.terms %}
+						{% if term.taxonomy == "brand" %}
+							{% set brand = term %}
+						{% endif %}
+					{% endfor %}
+
+					<div class="carousel-item px-5 {{ loop.index - 1 == 0 ? 'active' : '' }}" data-bs-interval="7000">
 						{% include "components/home-featured-car.twig" %}
 					</div>
 				{% endfor %}
@@ -40,9 +54,11 @@
 
 		</div>
 
-    <div class="d-flex justify-content-center align-content-center">
-      <Button class="view-allcars-btn py-4">View All</button>
-    </div>
+		<div class="d-flex justify-content-center align-content-center">
+			<a href="/cars">
+				<Button class="view-allcars-btn py-4">View All</button>
+			</a>
+		</div>
 
 	</div>
 </div>

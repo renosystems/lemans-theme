@@ -16,6 +16,10 @@ body {
   height: 100px !important;
 }
 
+#header {
+  min-height: 100px;
+}
+
 #header .nav-link {
   border: 0;
   border-radius: 0;
@@ -28,6 +32,10 @@ body {
 #header .nav-link.active {
   color: #fff;
   background-color: #171846;
+}
+
+#main-navbar {
+  z-index: 10;
 }
 
 /* foooter */
