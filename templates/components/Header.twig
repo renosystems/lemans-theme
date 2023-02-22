@@ -28,13 +28,13 @@
 				</div>
         <div id="navbar-search" class="d-none py-3">
           <form  >
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <input id="search-menu" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         </form>
         </div>
         <div>
-          <button id="main-menu-toggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fa-solid fa-bars" id="collapsed-navbar-icon"></i>
-            <i class="fa-sharp fa-solid fa-xmark d-none" id="uncollapsed-navbar-icon"></i>
+          <button id="main-menu-toggler" class="navbar-toggler px-3" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars fa-xl" id="collapsed-navbar-icon"></i>
+            <i class="fa-sharp fa-solid fa-xmark fa-xl d-none" id="uncollapsed-navbar-icon"></i>
           </button>
         </div>
 		</div>
@@ -43,7 +43,7 @@
   <div class="collapse navbar-collapse w-100 bg-white" id="main-navbar">
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       {% for item in menu.items %}
-        <li class="nav-item">
+        <li class="nav-item main-menu-item" id="{{item.title}}">
           <a class="py-3 px-5 nav-link {{ item.current ? 'active' : ''}}" aria-current="page" href="{{item.url}}">{{item.title}}</a>
         </li>
       {% endfor %}

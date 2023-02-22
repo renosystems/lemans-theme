@@ -113,6 +113,22 @@ jQuery(document).ready(function ($) {
       }
       //$(`#${this.id}-overlay`)[0].classList.add("d-none");
     });
+
+    $("#search-menu").on("input", (e) => {
+      const search = e.target.value.toLowerCase();
+
+      if (!search) {
+        $(".main-menu-item").each(function () {
+          $(this).removeClass("d-none");
+        });
+      } else {
+        $(".main-menu-item").each(function () {
+          if (!$(this)[0].id?.toLowerCase().includes(search))
+            $(this).addClass("d-none");
+          else $(this).removeClass("d-none");
+        });
+      }
+    });
   }
 
   //-----------------------------------------------------------//

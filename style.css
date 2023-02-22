@@ -43,6 +43,19 @@ a:link {
   z-index: 10;
 }
 
+#main-navbar .main-menu-item {
+  border-bottom: 1px solid #d9d9d9;
+}
+
+#main-navbar .nav-link.active {
+  background-color: #d9d9d9;
+  color: #444444;
+}
+
+#navbar-search #search-menu {
+  background-color: #d9d9d9;
+}
+
 /* foooter */
 .footer-menu a {
   color: white;
@@ -335,10 +348,45 @@ select {
   background-color: #fff;
 }
 
+.car-status-wrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #ffac3a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 18%;
+  top: 7%;
+}
+
+.car-status-wrapper.sold {
+  background-color: #444444;
+}
+
 @media (max-width: 420px) {
   #featured-cars-carousel .home-featured-car-content-wraper {
     padding-top: 60px;
     margin-top: 120px;
+  }
+
+  .car-status-wrapper {
+    left: 0;
+    top: 3%;
+  }
+}
+
+@media (max-width: 1180px) and (max-height: 820px) {
+  /*#featured-cars-carousel .home-featured-car-content-wraper {
+    padding-top: 60px;
+    margin-top: 120px;
+  }*/
+
+  .car-status-wrapper {
+    left: 0;
+    top: 1%;
   }
 }
 
