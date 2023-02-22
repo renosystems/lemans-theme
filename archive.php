@@ -40,6 +40,10 @@ if (is_day()) {
   }
   array_unshift($templates, 'archive-' . get_post_type() . '.twig');
 } elseif (is_tax('car-type')) {
+  $context['cartypes'] = Timber::get_terms([
+    'taxonomy' => 'car-type',
+    'hide_empty' => false,
+  ]);
   array_unshift($templates, 'taxonomy-cartype' . '.twig');
 }
 
