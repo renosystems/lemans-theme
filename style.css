@@ -623,6 +623,10 @@ select {
   background-color: #222222;
   border-radius: 7px;
   padding: 0.66em 2em;
+  text-decoration: none;
+}
+.car-details-btn:hover {
+  color: #ffac3a;
 }
 
 .car-details-spec {
@@ -672,10 +676,14 @@ select {
   background-size: 10px !important;
   opacity: 1 !important;
 }
-
 .car-modal-img {
-  width: 896px;
+  width: 100%;
   height: 580px;
+  background-size: cover;
+}
+
+#exampleModal .modal-dialog {
+  max-width: 65% !important;
 }
 
 .carousel-indicators [data-bs-target] {
@@ -696,7 +704,7 @@ img {
 }
 
 #specsModal .modal-body {
-  /* padding: 2em !important; */
+  padding: 1em 1.5em !important;
 }
 
 #specsModal .modal-header {
@@ -710,6 +718,7 @@ img {
 
 #specsModal .modal-dialog {
   top: 20%;
+  max-width: 300px !important;
 }
 
 #specsModal .btn-close {
@@ -909,12 +918,12 @@ img {
     height: 250px;
   }
   .car-modal-img {
-    width: 100%;
     height: 250px;
   }
 
   #exampleModal .modal-dialog {
     top: 15%;
+    max-width: 100% !important;
   }
   .gap {
     gap: 1em;
