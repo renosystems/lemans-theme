@@ -743,6 +743,13 @@ img {
   top: -10%;
 }
 
+#cars-listing-wrapper .car-status-wrapper {
+  width: 90px;
+  height: 90px;
+  left: 8%;
+  top: -2%;
+}
+
 #cars-listing-wrapper .img-fluid {
   max-width: 89%;
   height: 97%;
