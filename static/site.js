@@ -111,7 +111,6 @@ jQuery(document).ready(function ($) {
         $(`#navbar-search`)[0].classList.remove("d-none");
         $(`#collapsed-navbar-icon`)[0].classList.add("d-none");
       }
-      //$(`#${this.id}-overlay`)[0].classList.add("d-none");
     });
 
     $("#search-menu").on("input", (e) => {

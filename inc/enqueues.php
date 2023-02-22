@@ -2,7 +2,7 @@
 
 function theme_enqueues_styles_scripts()
 {
-  wp_enqueue_script('bootstrap', THEME_DIR . '/assets/bootstrap/js/bootstrap.min.js', array('jquery'), null, false);
+  //wp_enqueue_script('bootstrap', THEME_DIR . '/assets/bootstrap/js/bootstrap.min.js', array('jquery'), null, false);
   wp_enqueue_script('bootstrap.bundle', THEME_DIR . '/assets/bootstrap/js/bootstrap.bundle.min.js', array('jquery'), null, false);
   wp_enqueue_script('swipper.bundle', THEME_DIR . '/assets/swipper-bundle/swiper-bundle.min.js', array('jquery'), null, false);
 
