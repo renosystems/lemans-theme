@@ -1,4 +1,4 @@
-{% block content %}
+
 <div class="availble-cars-bg">
 
 	<div class="container">
@@ -30,7 +30,7 @@
 					{% set brand = term %}
 					{% endif %}
 					{% endfor %}
-					<div class="col-12 col-sm-6  col-lg-4 h-100">
+					<div class="col-12 col-lg-4">
 						{% include "components/home-featured-car.twig" %}
 					</div>
 
@@ -41,4 +41,3 @@
 		</div>
 	</div>
 </div>
-{% endblock %}
