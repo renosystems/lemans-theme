@@ -923,4 +923,7 @@ img {
   .title-underline::after {
     display: none;
   }
+  #cars-listing-wrapper div.col-12.col-lg-4 {
+    height: 100%;
+  }
 }
