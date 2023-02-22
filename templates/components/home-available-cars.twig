@@ -26,29 +26,37 @@
 			{% for slide in structuredCarsAvailableNow %}
 				<div class="swiper-slide h-100">
 					{% if slide.size == 1 %}
-						<img id="available-car-{{loop.index}}" src="{{ Image(slide.cars[0].available_now_image).src }}" alt="{{ Image(slide.cars[0].available_now_image).title }}" class="w-100 h-100 home-available-car"/>
-						<div id="available-car-{{loop.index}}-overlay" class="available-car-overlay d-none text-center">
-							<h5>{{slide.cars[0].model}}</h5>
-							<p>{{slide.cars[0].excert}}</p>
-						</div>
-					{% else %}
-						<div class="h-100 w-100">
-							<div class="{{ slide.cars[1] ? 'h-50' : 'h-100' }} w-100 position-relative">
-								<img id="available-car-{{loop.index * 1}}" src="{{ Image(slide.cars[0].available_now_image).src }}" alt="{{ Image(slide.cars[0].available_now_image).title }}" class="w-100 h-100 home-available-car"/>
-								<div id="available-car-{{loop.index * 1}}-overlay" class="available-car-overlay w-100 d-none text-center">
+						<a href="/cars/{{slide.cars[0].slug}}">
+							<div id="available-car-{{loop.index}}" class="h-100 w-100 d-flex justify-content-center position-relative home-available-car-wrapper">
+								<img id="available-car-{{loop.index}}-image" src="{{ Image(slide.cars[0].available_now_image).src }}" alt="{{ Image(slide.cars[0].available_now_image).title }}" class="w-100 h-100 home-available-car"/>
+								<div id="available-car-{{loop.index}}-overlay" class="available-car-overlay d-none text-center">
 									<h5>{{slide.cars[0].model}}</h5>
 									<p>{{slide.cars[0].excert}}</p>
 								</div>
 							</div>
-
-							{% if slide.cars[1] %}
-								<div class="h-50 w-100 position-relative">
-									<img id="available-car-{{loop.index * 2}}" src="{{ Image(slide.cars[1].available_now_image).src }}" alt="{{ Image(slide.cars[1].available_now_image).title }}" class="w-100 h-100 home-available-car"/>
-									<div id="available-car-{{loop.index * 2}}-overlay" class="available-car-overlay w-100 d-none text-center">
-										<h5>{{slide.cars[1].model}}</h5>
-										<p>{{slide.cars[1].excert}}</p>
+						</a>
+					{% else %}
+						<div class="h-100 w-100">
+							<a href="/cars/{{slide.cars[0].slug}}">
+								<div id="available-car-{{loop.index}}" class="{{ slide.cars[1] ? 'h-50' : 'h-100' }} w-100 d-flex justify-content-center position-relative home-available-car-wrapper">
+									<img id="available-car-{{loop.index}}-image" src="{{ Image(slide.cars[0].available_now_image).src }}" alt="{{ Image(slide.cars[0].available_now_image).title }}" class="w-100 h-100 home-available-car"/>
+									<div id="available-car-{{loop.index}}-overlay" class="available-car-overlay w-100 d-none text-center">
+										<h5>{{slide.cars[0].model}}</h5>
+										<p>{{slide.cars[0].excert}}</p>
 									</div>
 								</div>
+							</a>
+
+							{% if slide.cars[1] %}
+								<a href="/cars/{{slide.cars[1].slug}}">
+									<div id="available-car-{{loop.index}}-second" class="h-50 w-100 d-flex justify-content-center position-relative home-available-car-wrapper">
+										<img id="available-car-{{loop.index}}-second-image" src="{{ Image(slide.cars[1].available_now_image).src }}" alt="{{ Image(slide.cars[1].available_now_image).title }}" class="w-100 h-100 home-available-car"/>
+										<div id="available-car-{{loop.index}}-second-overlay" class="available-car-overlay w-100 d-none text-center">
+											<h5>{{slide.cars[1].model}}</h5>
+											<p>{{slide.cars[1].excert}}</p>
+										</div>
+									</div>
+								</a>
 							{% endif %}
 						</div>
 					{% endif %}

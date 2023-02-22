@@ -416,6 +416,10 @@ select {
   background-color: #171840;
 }
 
+.home-available-car {
+  cursor: pointer;
+}
+
 /* BRANDS SECTION */
 #brands {
   background: #fff;

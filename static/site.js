@@ -84,14 +84,16 @@ jQuery(document).ready(function ($) {
   });
 
   //available cars overlay on hover feature---------------------//
-  $(".home-available-car").on("mouseover", function (e) {
-    this.classList.add("available-car-hovered");
+  $(".home-available-car-wrapper").on("mouseover", function (e) {
+    //this.classList.add("available-car-hovered");
     $(`#${this.id}-overlay`)[0].classList.remove("d-none");
+    $(`#${this.id}-image`)[0].classList.add("available-car-hovered");
   });
 
-  $(".home-available-car").on("mouseleave", function () {
-    this.classList.remove("available-car-hovered");
+  $(".home-available-car-wrapper").on("mouseleave", function () {
     $(`#${this.id}-overlay`)[0].classList.add("d-none");
+    $(`#${this.id}-image`)[0].classList.remove("available-car-hovered");
+
   });
   //-----------------------------------------------------------//
 
