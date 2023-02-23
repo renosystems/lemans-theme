@@ -1,27 +1,26 @@
-{% set post = whyLemansPosts[0] %}
-{% set advantages = post.meta('advantages') %}
-{% set founder = post.meta('founder') %}
+{% set offerings = options.offerings %}
+{% set founder = options.lemans_founder %}
 
 <div id="why-lemans" class="bg-dark px-5 px-md-0">
 	<div class="container py-4">
 		<h3 class="why-lemans-title mb-4">
-			{{ post.heading }}
+			Why le Man >
 		</h3>
 
 		<div class="row px-1 px-md-5 py-5 why-lemans-content">
 			<div class="col-12 col-md-7">
 				<div class="px-3">
-					<p>{{post.description}}</p>
+					<p>{{options.why_le_man_summary}}</p>
 				</div>
 
 				<div class="pt-5 row">
-					{% for advantage in advantages %}
+					{% for offering in offerings %}
 						<div class="col-12 col-md-6">
 							<div class="d-flex align-items-center">
-								<img class="img-fluid advantage-img" src="{{ Image(advantage.advantage_icon).src }}" alt="{{ Image(advantage.advantage_icon).title }}"/>
-								<div class="px-2 advantage-name">{{advantage.advantage}}</div>
+								<img class="img-fluid advantage-img" src="{{ Image(offering.icon).src }}" alt="{{ Image(offering.icon).title }}"/>
+								<div class="px-2 advantage-name">{{offering.name}}</div>
 							</div>
-							<div class="pt-3 pb-5 advantage-desc">{{advantage.description}}</div>
+							<div class="pt-3 pb-5 advantage-desc">{{offering.description}}</div>
 						</div>
 					{% endfor %}
 				</div>
@@ -29,10 +28,10 @@
 			<div class="divider m-auto d-none d-md-flex"></div>
 			<div class="col-12 col-md-4">
 				<div class="d-flex flex-column w-100">
-					<img class="img-fluid" src="{{ Image(founder.founder_photo).src }}" alt="{{ Image(founder.founder_photo).title }}"/>
-					<div class="founder-name pt-3 pb-1">{{founder.founder_name}}</div>
-					<div class="founder-title pb-3">{{founder.founder_title}}</div>
-					<div class="founder-description">{{founder.description}}</div>
+					<img class="img-fluid" src="{{ Image(founder.image).src }}" alt="{{ Image(founder.image).title }}"/>
+					<div class="founder-name pt-3 pb-1">{{founder.name}}</div>
+					<div class="founder-title pb-3">{{founder.title}}</div>
+					<div class="founder-description">{{founder.summary}}</div>
 				</div>
 
 			</div>

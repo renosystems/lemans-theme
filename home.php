@@ -11,6 +11,7 @@
 $context = Timber::context();
 $timber_post = Timber::query_post();
 $context['post'] = $timber_post;
+$context['options'] = get_fields('options');
 
 $context['carsAvailableNow'] = new Timber\PostQuery([
   'post_type' => 'cars',
@@ -53,17 +54,6 @@ $context['cartypes'] = Timber::get_terms([
 $context['brands'] = Timber::get_terms([
   'taxonomy' => 'brand',
   'hide_empty' => false,
-]);
-
-$context['whyLemansPosts'] = new Timber\PostQuery([
-  'post_type' => 'post',
-  'tax_query' => array(
-    array(
-      'taxonomy' => 'post_tag',
-      'field' => 'name',
-      'terms' => 'why-lemans',
-    )
-  )
 ]);
 
 //comment
