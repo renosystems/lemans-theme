@@ -96,6 +96,7 @@ class StarterSite extends Timber\Site
     $context['menu'] = new Timber\Menu();
     $context['site'] = $this;
     $context['options'] = get_fields('options');
+    $context['custom_logo_url'] = wp_get_attachment_image_url(get_theme_mod('custom_logo'), 'full');
     return $context;
   }
 
@@ -152,6 +153,9 @@ class StarterSite extends Timber\Site
     );
 
     add_theme_support('menus');
+
+    $defaults = array("height" => "100", "width" => "250", "flex-height" => false, "flex-width" => false, "unlink-home-page-logo" => true);
+    add_theme_support('custom-logo', $defaults);
   }
 
   /** This Would return 'foo bar!'.
