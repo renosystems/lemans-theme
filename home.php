@@ -11,7 +11,6 @@
 $context = Timber::context();
 $timber_post = Timber::query_post();
 $context['post'] = $timber_post;
-$context['options'] = get_fields('options');
 
 $context['carsAvailableNow'] = new Timber\PostQuery([
   'post_type' => 'cars',

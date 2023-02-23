@@ -19,13 +19,13 @@ if (function_exists('acf_add_options_page')) {
   //  )
   //);
 
-  //acf_add_options_sub_page(
-  //  array(
-  //    'page_title' => 'lemans Footer Settings',
-  //    'menu_title' => 'Footer',
-  //    'parent_slug' => 'theme-general-settings',
-  //  )
-  //);
+  acf_add_options_sub_page(
+    array(
+      'page_title' => 'lemans Footer Settings',
+      'menu_title' => 'Footer',
+      'parent_slug' => 'theme-general-settings',
+    )
+  );
 
   acf_add_options_sub_page(
     array(

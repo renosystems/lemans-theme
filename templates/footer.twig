@@ -1,3 +1,4 @@
+{% set lemansFooter = options.lemans_footer %}
 <!-- footer -->
 <div class="bg-dark text-white border-top border-dark-subtle">
 	<div class="container">
@@ -5,51 +6,43 @@
 			<div class="col-10  col-md-6">
 				<div class="align-items-center align-items-md-start text-center text-md-start d-flex flex-column mb-3">
 					<div class="mb-3">
-						<a href=""><img src="{{ site.theme.link }}/static/images/logo-white.png" class="logo"
-								alt="logo"></a>
+						<a href="/"><img src="{{ site.theme.link }}/static/images/logo-white.png" class="logo" alt="logo"></a>
 					</div>
-					<div class="mb-4 w-75 footer-about">Our journey started in 2008 in Constanta, Romania and currently,
-						we have five branches across Europe and Egypt.</div>
-					<div class="mb-5">Tax Identification Number: 562-223-304</div>
+					<div class="mb-4 w-75 footer-about">{{lemansFooter.summary}}</div>
 					<div class="footer-socials mb-4 mb-md-1">
-						<a target="_blank" href="https://www.facebook.com/lemansgroup?mibextid=LQQJ4d">
+						<a target="_blank" href="{{ options.facebook_page_link }}">
 							<i class="fa-brands fa-facebook-f fa-xl"></i>
 						</a>
-						<a target="_blank" class="mx-4" href="">
+						<a target="_blank" class="mx-4" href="{{ options.instagram_link }}">
 							<i class="fa-brands fa-instagram fa-xl"></i>
 						</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-10  col-md-2">
-				<div
-					class="align-items-center align-items-md-start text-center text-md-start d-flex flex-column footer-menu mb-3">
-					<a href="" class="mb-3 fw-bold">Menu</a>
-					<a href="" class="mb-3">Available Cars</a>
-					<a href="" class="mb-3">About Us</a>
-					<a href="" class="mb-3">Contact Us</a>
+				<div class="align-items-center align-items-md-start text-center text-md-start d-flex flex-column footer-menu mb-3">
+					<h5 class="mb-3 fw-bold">Menu</h5>
+
+					{% for item in menu.items %}
+						<a href="{{item.url}}" class="mb-3 {{ item.current ? 'fw-bold' : '' }}" aria-current="page">{{item.title}}</a>
+					{% endfor %}
 				</div>
 			</div>
 			<div class="col-10  col-md-4">
 				<div class="align-items-center align-items-md-start d-flex flex-column mb-3">
 					<div id="lemans-location-map">
-						<iframe
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.950451696399!2d31.436288814690776!3d30.009579081895026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583cce1576400b%3A0x8df1e3aed799b376!2sGrand%20Plaza!5e0!3m2!1sen!2seg!4v1676472365282!5m2!1sen!2seg"
-							width="370" height="200" style="border:0;" allowfullscreen="" loading="lazy"
-							referrerpolicy="no-referrer-when-downgrade"></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.950451696399!2d31.436288814690776!3d30.009579081895026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583cce1576400b%3A0x8df1e3aed799b376!2sGrand%20Plaza!5e0!3m2!1sen!2seg!4v1676472365282!5m2!1sen!2seg" width="370" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 					</div>
 					<div class="small">
 						<i class="fa-solid fa-location-dot mx-1"></i>
-						Grand Plaza Mall, 5th
-						stellement, New Cairo,
-						Cairo, Cairo Governorate, Egypt, 11835
+						{{ options.lemans_address }}
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="row justify-content-center text-center">
 			<hr>
-			<div class="footer-rights mb-3">Le Mans © 2023</div>
+			<div class="footer-rights mb-3">{{ lemansFooter.copy_rights }}</div>
 		</div>
 	</div>
 </div>
@@ -58,13 +51,11 @@
 
 <div class="help-icons-wrapper">
 	<div class="help-icons">
-		<a target="_blank" href="https://www.facebook.com/lemansgroup?mibextid=LQQJ4d"
-			class="icon-wrapper messenger"><img src="{{ site.theme.link }}/static/images/messenger-icon.svg"
-				width="100%" alt=""></a>
-		<a target="_blank" href="tel:17112" class="icon-wrapper">
+		<a target="_blank" href="{{ options.facebook_page_link }}" class="icon-wrapper messenger"><img src="{{ site.theme.link }}/static/images/messenger-icon.svg" width="100%" alt=""></a>
+		<a target="_blank" href="tel:{{ options.hotline }}" class="icon-wrapper">
 			<i class="fa-solid fa-phone fa-2x"></i>
 		</a>
-		<a target="_blank" href="https://api.whatsapp.com/send?phone=201212222894" class="icon-wrapper whatsapp">
+		<a target="_blank" href="https://api.whatsapp.com/send?phone=2{{ options.whatsapp_number }}" class="icon-wrapper whatsapp">
 			<i class="fa-brands fa-whatsapp fa-3x"></i>
 		</a>
 	</div>
