@@ -41,7 +41,7 @@ jQuery(document).ready(function ($) {
     },
   });
 
-  var brandsSwiper = new Swiper(".carTypesSwiper", {
+  var carTypesSwiper = new Swiper(".carTypesSwiper", {
     freeMode: true,
     breakpoints: {
       // when window width is >= 320px
