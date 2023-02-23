@@ -9,6 +9,7 @@
  */
 
 include 'inc/constants.php';
+include 'inc/acf-config.php';
 include 'inc/enqueues.php';
 
 /**
