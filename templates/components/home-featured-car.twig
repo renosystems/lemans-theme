@@ -1,7 +1,7 @@
 <div
 	class="home-featured-car-wrapper d-flex justify-content-center">
 	<!-- CAR FEATURED IMAGE -->
-	<div class="car-status-wrapper {{ car.car_status == " sold" ? 'sold' : '' }}">{{car.car_status}}</div>
+	<div class="car-status-wrapper {{ car.car_status == 'Sold' ? 'sold' : '' }}">{{car.car_status}}</div>
 	<div class="home-featured-car-image-wraper">
 		<img src="{{ Image(car.featured_image).src }}" alt="{{ Image(car.featured_image).title }}" class="img-fluid">
 	</div>
