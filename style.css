@@ -18,11 +18,11 @@ a:link {
 /* header */
 .logo {
   width: 150px !important;
-  height: 100px !important;
+  height: 64px !important;
 }
 
 #header {
-  min-height: 100px;
+  min-height: 64px;
 }
 
 #header .nav-link {
