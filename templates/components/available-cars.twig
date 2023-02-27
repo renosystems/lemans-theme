@@ -1,22 +1,28 @@
-
 <div class="availble-cars-bg">
 
 	<div class="container">
-		<div class="row py-4">
-			<div class="col-3 col-md-2">
-				<div class="d-flex flex-column justify-content-start align-items-center car-filter px-2 py-3">
-					<div class="car-filter-type fw-bold">
+		<div class="row py-4 justify-content-center">
+
+			<div class="col-12 col-md-2 ">
+
+				<div class="swiper carListingSwipper car-filter mb-5 mb-md-0">
+					<div class="car-filter-type fw-bold mt-3">
 						Browse by car type
 					</div>
-					{% for type in cartypes %}
-					<a href="/car-type/{{type.slug}}" class="text-decoration-none">
-						<div class="d-flex flex-column align-items-center">
-							<img src="{{ Image(type.image).src }}" alt="{{ Image(type.image).title }}"
-								class="car-filter-img">
-							<p class="car-filter-type">{{type.name}}</p>
-						</div>
-					</a>
-					{% endfor %}
+					<div
+						class="swiper-wrapper d-flex flex-row flex-md-column justify-content-start align-items-center  px-2 py-3">
+						{% for type in cartypes %}
+
+						<a href="/car-type/{{type.slug}}" class="text-decoration-none swiper-slide ">
+							<div class="d-flex flex-column align-items-center">
+								<img src="{{ Image(type.image).src }}" alt="{{ Image(type.image).title }}"
+									class="car-filter-img">
+								<p class="car-filter-type">{{type.name}}</p>
+							</div>
+						</a>
+
+						{% endfor %}
+					</div>
 				</div>
 			</div>
 			<div class="col-9 col-md-10">

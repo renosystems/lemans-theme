@@ -20,18 +20,23 @@
 				</div>
 			</div>
 			<div class="col-10  col-md-2">
-				<div class="align-items-center align-items-md-start text-center text-md-start d-flex flex-column footer-menu mb-3">
+				<div
+					class="align-items-center align-items-md-start text-center text-md-start d-flex flex-column footer-menu mb-3">
 					<h5 class="mb-3 fw-bold">Menu</h5>
 
 					{% for item in menu.items %}
-						<a href="{{item.url}}" class="mb-3 {{ item.current ? 'fw-bold' : '' }}" aria-current="page">{{item.title}}</a>
+					<a href="{{item.url}}" class="mb-3 {{ item.current ? 'fw-bold' : '' }}"
+						aria-current="page">{{item.title}}</a>
 					{% endfor %}
 				</div>
 			</div>
 			<div class="col-10  col-md-4">
 				<div class="align-items-center align-items-md-start d-flex flex-column mb-3">
 					<div id="lemans-location-map">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.950451696399!2d31.436288814690776!3d30.009579081895026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583cce1576400b%3A0x8df1e3aed799b376!2sGrand%20Plaza!5e0!3m2!1sen!2seg!4v1676472365282!5m2!1sen!2seg" width="370" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.950451696399!2d31.436288814690776!3d30.009579081895026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583cce1576400b%3A0x8df1e3aed799b376!2sGrand%20Plaza!5e0!3m2!1sen!2seg!4v1676472365282!5m2!1sen!2seg"
+							width="370" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"></iframe>
 					</div>
 					<div class="small">
 						<i class="fa-solid fa-location-dot mx-1"></i>
@@ -51,11 +56,13 @@
 
 <div class="help-icons-wrapper">
 	<div class="help-icons">
-		<a target="_blank" href="{{ options.facebook_page_link }}" class="icon-wrapper messenger"><img src="{{ site.theme.link }}/static/images/messenger-icon.svg" width="100%" alt=""></a>
+		<a target="_blank" href="{{ options.facebook_page_link }}" class="icon-wrapper messenger"><img
+				src="{{ site.theme.link }}/static/images/messenger-icon.svg" width="100%" alt=""></a>
 		<a target="_blank" href="tel:{{ options.hotline }}" class="icon-wrapper">
 			<i class="fa-solid fa-phone fa-2x"></i>
 		</a>
-		<a target="_blank" href="https://api.whatsapp.com/send?phone=2{{ options.whatsapp_number }}" class="icon-wrapper whatsapp">
+		<a target="_blank" href="https://api.whatsapp.com/send?phone=2{{ options.whatsapp_number }}"
+			class="icon-wrapper whatsapp">
 			<i class="fa-brands fa-whatsapp fa-3x"></i>
 		</a>
 	</div>

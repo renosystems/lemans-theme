@@ -62,6 +62,27 @@ jQuery(document).ready(function ($) {
     },
   });
 
+  var carListingSwipper = new Swiper(".carListingSwipper", {
+    freeMode: true,
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+      },
+      // when window width is >= 480px
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+      },
+      // when window width is >= 640px
+      640: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+      },
+    },
+  });
+
   var availableCarsSwipper = new Swiper(".availableCarsSwipper", {
     freeMode: true,
     breakpoints: {
@@ -93,7 +114,6 @@ jQuery(document).ready(function ($) {
   $(".home-available-car-wrapper").on("mouseleave", function () {
     $(`#${this.id}-overlay`)[0].classList.add("d-none");
     $(`#${this.id}-image`)[0].classList.remove("available-car-hovered");
-
   });
   //-----------------------------------------------------------//
 
