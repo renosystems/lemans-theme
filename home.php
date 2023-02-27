@@ -55,16 +55,5 @@ $context['brands'] = Timber::get_terms([
   'hide_empty' => false,
 ]);
 
-$context['whyLemansPosts'] = new Timber\PostQuery([
-  'post_type' => 'post',
-  'tax_query' => array(
-    array(
-      'taxonomy' => 'post_tag',
-      'field' => 'name',
-      'terms' => 'why-lemans',
-    )
-  )
-]);
-
 //comment
 Timber::render('home.twig', $context);
