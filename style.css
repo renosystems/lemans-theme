@@ -744,13 +744,14 @@ img {
 }
 
 .car-filter-type {
-  font-size: 0.8rem;
+  font-size: .9rem;
+  font-weight: 600;
   text-align: center;
   color: black;
 }
 
 .car-filter-img {
-  width: 50%;
+  width: 70%;
 }
 
 #cars-listing-wrapper .home-featured-car-content-wraper {
