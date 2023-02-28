@@ -251,6 +251,7 @@ select {
 
 #car-types img {
   max-height: 200px !important;
+  max-width: 200px !important;
 }
 
 /*featured cars section*/

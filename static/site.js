@@ -55,7 +55,11 @@ jQuery(document).ready(function ($) {
         spaceBetween: 5,
       },
       // when window width is >= 640px
-      640: {
+      800: {
+        slidesPerView: 3,
+        spaceBetween: 5,
+      },
+      1200: {
         slidesPerView: 5,
         spaceBetween: 5,
       },
