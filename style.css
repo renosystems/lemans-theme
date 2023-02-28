@@ -100,6 +100,10 @@ a:link {
   font-size: 0.8rem;
 }
 
+#contact-form .carousel-inner {
+  height: 80% !important;
+}
+
 form input,
 form select,
 form textarea {
@@ -744,7 +748,7 @@ img {
 }
 
 .car-filter-type {
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-align: center;
   color: black;
