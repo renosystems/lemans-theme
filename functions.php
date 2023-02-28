@@ -10,6 +10,7 @@
 
 include 'inc/constants.php';
 include 'inc/acf-config.php';
+include 'inc/query-vars.php';
 include 'inc/enqueues.php';
 
 /**
@@ -176,6 +177,9 @@ class StarterSite extends Timber\Site
   {
     $twig->addExtension(new Twig\Extension\StringLoaderExtension());
     $twig->addFilter(new Twig\TwigFilter('myfoo', array($this, 'myfoo')));
+    $twig->addFunction(
+      new Timber\Twig_Function('get_query_var', 'get_query_var')
+    );
     return $twig;
   }
 
