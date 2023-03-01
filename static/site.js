@@ -18,6 +18,14 @@ jQuery(document).ready(function ($) {
   //    false
   //  );
 
+  //CONTACT FORM 7
+  let queryAbout = $(".wpcf7-form-control.wpcf7-select.post");
+  let isPreSelected = $("#preSelectedCar");
+
+  if (queryAbout.length && isPreSelected.length) {
+    $(queryAbout).attr("disabled", true);
+  }
+
   var brandsSwiper = new Swiper(".brandsSwiper", {
     freeMode: true,
     slidesPerView: 2,
