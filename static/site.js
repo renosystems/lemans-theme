@@ -19,11 +19,11 @@ jQuery(document).ready(function ($) {
   //  );
 
   //CONTACT FORM 7
-  let queryAbout = $(".wpcf7-form-control.wpcf7-select.post");
+  let car = $(".wpcf7-form-control.wpcf7-select.post");
   let isPreSelected = $("#preSelectedCar");
 
-  if (queryAbout.length && isPreSelected.length) {
-    $(queryAbout).attr("disabled", true);
+  if (car.length && isPreSelected.length) {
+    $(car).attr("disabled", true);
   }
 
   var brandsSwiper = new Swiper(".brandsSwiper", {
