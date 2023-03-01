@@ -3,7 +3,7 @@
 
 function add_query_vars($aVars)
 {
-  $aVars[] = "queryAbout";
+  $aVars[] = "requestedCar";
 
   return $aVars;
 }
