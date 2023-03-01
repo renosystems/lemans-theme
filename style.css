@@ -96,8 +96,8 @@ a:link {
   letter-spacing: 2px;
 }
 
-.form-message{
-  color: #f5f5f5
+.form-message {
+  color: #f5f5f5;
 }
 
 .form-title + div {
@@ -716,6 +716,11 @@ img {
   --bs-modal-width: 25% !important ;
 }
 
+/*#specsModal.modal.show {
+  display: flex !important;
+  justify-content: center;
+}*/
+
 #specsModal .modal-body {
   padding: 1em 1.5em !important;
 }
@@ -730,8 +735,8 @@ img {
 }
 
 #specsModal .modal-dialog {
-  top: 20%;
-  max-width: 300px !important;
+  top: 15%;
+  /*max-width: 300px !important;*/
 }
 
 #specsModal .btn-close {
