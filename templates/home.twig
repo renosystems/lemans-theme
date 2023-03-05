@@ -2,30 +2,48 @@
 
 
 {% block content %}
+	{% set sections = post.meta('sections') %}
 	<div class="bg-dark">
 		{{post.content}}
-		{% if not carsAvailableNow is empty %}
-			{% include "components/home-available-cars.twig" %}
-		{% endif %}
 
-		{% if not featuredCars is empty %}
-			{% include "components/home-featured-cars.twig" %}
-		{% endif %}
+		{% for section in sections %}
+			{% if section.acf_fc_layout == 'available_cars' %}
+				{% if not carsAvailableNow is empty %}
+					{% include "components/home-available-cars.twig" %}
+				{% endif %}
 
-		<div class="bg-dark p-5 m-0 d-flex justify-content-center">
-			<hr class="section-divider bg-dark p-0 m-0"/>
-		</div>
-		{% include "components/home-why-lemans.twig" %}
+			{% elseif section.acf_fc_layout == 'featured_cars' %}
+				{% if not featuredCars is empty %}
+					{% include "components/home-featured-cars.twig" %}
+				{% endif %}
+				{% if (loop.index != sections | length) %}
+					<div class="bg-dark p-5 m-0 d-flex justify-content-center">
+						<hr class="section-divider bg-dark p-0 m-0"/>
+					</div>
+				{% endif %}
 
-		{% if not cartypes is empty %}
-			<div class="bg-dark p-5 m-0 d-flex justify-content-center">
-				<hr class="section-divider bg-dark p-0 m-0"/>
-			</div>
-			{% include "components/home-car-types.twig" %}
-		{% endif %}
 
-		{% if not brands is empty %}
-			{% include "components/home-brands.twig" %}
-		{% endif %}
+			{% elseif section.acf_fc_layout == 'why_lemans' %}
+				{% include "components/home-why-lemans.twig" %}
+				{% if (loop.index != sections | length) %}
+					<div class="bg-dark p-5 m-0 d-flex justify-content-center">
+						<hr class="section-divider bg-dark p-0 m-0"/>
+					</div>
+				{% endif %}
+
+			{% elseif section.acf_fc_layout == 'car_types' %}
+				{% if not cartypes is empty %}
+					{% include "components/home-car-types.twig" %}
+				{% endif %}
+
+			{% elseif section.acf_fc_layout == 'brands' %}
+				{% if not brands is empty %}
+					{% include "components/home-brands.twig" %}
+				{% endif %}
+
+			{% endif %}
+		{% endfor %}
+
+
 	</div>
 {% endblock %}
