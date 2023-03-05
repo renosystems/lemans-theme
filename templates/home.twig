@@ -7,6 +7,8 @@
 		{{post.content}}
 
 		{% for section in sections %}
+			{% set  sectionHeading = section.section_heading %}
+
 			{% if section.acf_fc_layout == 'available_cars' %}
 				{% if not carsAvailableNow is empty %}
 					{% include "components/home-available-cars.twig" %}
