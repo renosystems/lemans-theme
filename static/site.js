@@ -1,22 +1,30 @@
 jQuery(document).ready(function ($) {
-  //let wpcf7Elm = document.querySelector(".wpcf7");
+  let wpcf7Elm = document.querySelector(".wpcf7");
 
-  //if (wpcf7Elm)
-  //  wpcf7Elm.addEventListener(
-  //    "wpcf7submit",
-  //    function (event) {
-  //      const eventDetails = event.detail;
+  if (wpcf7Elm) {
+    wpcf7Elm.addEventListener(
+      "wpcf7invalid",
+      function (e) {
+        setTimeout(function () {
+          $(".wpcf7-not-valid-tip").prepend(
+            "<i class='fa-sharp fa-solid fa-circle-exclamation me-2'></i>"
+          );
+        }, 200);
+      },
+      false
+    );
 
-  //      if (eventDetails.status === "mail_sent") {
-  //        $("#thanku-modal-toggler").click();
-  //        const successMessage = document.querySelector(
-  //          ".wpcf7-response-output"
-  //        );
-  //        successMessage.classList.add("d-none");
-  //      }
-  //    },
-  //    false
-  //  );
+    wpcf7Elm.addEventListener(
+      "wpcf7submit",
+      function (e) {
+        const responseMessage = document.querySelector(
+          ".wpcf7-response-output"
+        );
+        responseMessage.classList.add("d-none");
+      },
+      false
+    );
+  }
 
   //CONTACT FORM 7
   let car = $(".wpcf7-form-control.wpcf7-select.post");
