@@ -142,14 +142,15 @@ select {
 .wpcf7-not-valid-tip {
   font-size: 0.8em !important;
   margin-bottom: 10px;
+  color: #b30000 !important;
 }
 
 .wpcf7-not-valid {
-  border: 2px solid #dc3232;
+  border: 2px solid #b30000;
 }
 
 .wpcf7-not-valid::placeholder {
-  color: #dc3232;
+  color: #b30000;
 }
 
 @media (min-width: 576px) {
