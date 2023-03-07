@@ -2,6 +2,8 @@
 
 {% block content %}
 
+	{% set gallary = post.meta("gallary") %}
+
 	<!-- form -->
 	<div id="contact-form" class="bg-dark">
 		<div class="container py-5">
@@ -12,15 +14,11 @@
 				<div class="col-md-6 d-none d-md-block">
 					<div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade h-100 carousel-bg rounded-3 d-flex flex-column" data-bs-ride="carousel">
 						<div class="carousel-inner">
-							<div class="carousel-item active  h-100">
-								<img class="contact-img h-100" src="https://images.unsplash.com/photo-1624880056139-d1212d7ff347?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" class="d-block" alt="...">
-							</div>
-							<div class="carousel-item h-100">
-								<img class="contact-img h-100" src="https://images.unsplash.com/photo-1624880057596-c8f6c383cd92?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" class="d-block" alt="...">
-							</div>
-							<div class="carousel-item h-100">
-								<img class="contact-img h-100" src="https://images.unsplash.com/photo-1624880056660-5aa3d36ee1b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" class="d-block" alt="...">
-							</div>
+							{% for image in gallary %}
+								<div class="carousel-item {{ loop.index == 1 ? 'active' : ''}} h-100">
+									<img class="contact-img h-100" src="{{ image.image }}" class="d-block" alt="gallary-image">
+								</div>
+							{% endfor %}
 						</div>
 
 						<div class="d-flex flex-column fw-bold px-3 text-dark mt-4">
