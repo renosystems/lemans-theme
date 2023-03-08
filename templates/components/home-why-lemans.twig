@@ -1,0 +1,42 @@
+{% set offerings = options.offerings %}
+{% set founder = options.lemans_founder %}
+
+<div id="why-lemans" class="bg-dark px-5 px-md-0">
+	<div class="container py-4">
+		<h3 class="why-lemans-title mb-4">
+			Why le Man >
+		</h3>
+
+		<div class="row px-1 px-md-5 py-5 why-lemans-content">
+			<div class="col-12 col-lg-6">
+				<div class="px-3">
+					<p>{{options.why_le_man_summary}}</p>
+				</div>
+
+				<div class="pt-5 row">
+					{% for offering in offerings %}
+						<div class="col-12 col-md-6">
+							<div class="d-flex align-items-center">
+								<img class="img-fluid advantage-img" src="{{ Image(offering.icon).src }}" alt="{{ Image(offering.icon).title }}"/>
+								<div class="px-2 advantage-name">{{offering.name}}</div>
+							</div>
+							<div class="pt-3 pb-5 advantage-desc">{{offering.description}}</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="divider m-auto d-none d-lg-flex"></div>
+			<div class="col-12 col-lg-5">
+				<div class="d-flex flex-column w-100">
+					<img class="img-fluid" src="{{ Image(founder.image).src }}" alt="{{ Image(founder.image).title }}"/>
+					<div class="founder-name pt-3 pb-1">{{founder.name}}</div>
+					<div class="founder-title pb-3">{{founder.title}}</div>
+					<div class="founder-description">{{founder.summary}}</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+</div>

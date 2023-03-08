@@ -1,0 +1,63 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{% set gallary = post.meta("gallary") %}
+	<!-- form -->
+	<div id="contact-form" class="bg-dark">
+		<div class="container py-5">
+			<div class="d-flex flex-column " id="thank-you-message">
+				{% include "components/contact-thank-you.twig" %}
+			</div>
+			<div class="row justify-content-center contact-bg py-4 px-3 rounded">
+				<div class="col-md-6 d-none d-md-block">
+					<div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade h-100 carousel-bg rounded-3 d-flex flex-column" data-bs-ride="carousel">
+						<div class="carousel-inner">
+
+							{% if (cars) %}
+								{% for image in cars[0].meta('gallary_images') %}
+									<div class="carousel-item {{ loop.index == 1 ? 'active' : '' }} h-100">
+										<img class="contact-img h-100" src="{{ Image(image.image).src }}" alt="{{ Image(image.image).title }}" class="d-block"/>
+									</div>
+								{% endfor %}
+							{% else %}
+								{% for image in gallary %}
+									<div class="carousel-item {{ loop.index == 1 ? 'active' : ''}} h-100">
+										<img class="contact-img h-100" src="{{ image.image }}" class="d-block" alt="gallary-image">
+									</div>
+								{% endfor %}
+							{% endif %}
+
+						</div>
+
+						<div class="d-flex flex-column fw-bold px-3 text-dark mt-4">
+							<div class="mb-1">
+								<i class="fa-solid fa-phone fa-xl mx-2"></i>
+								{{options.hotline}}</div>
+							<div>
+								<i class="fa-solid fa-envelope fa-xl mx-2"></i>
+								{{options.lemans_support_email}}</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="d-flex flex-column ">
+						<div class="d-flex flex-column mb-3">
+							<div class="form-title">Request Your Car</div>
+							{#<div class="text-white">We're here to help you, send us your queries via the below form</div>#}
+						</div>
+						<div class="d-flex flex-column">
+							{{post.content}}
+							<!-- pre selected car flag -->
+							{% if (cars) %}
+								<div id="preSelectedCar" class="d-none"></div>
+							{% endif %}
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

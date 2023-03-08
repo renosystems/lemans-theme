@@ -1,0 +1,124 @@
+{% extends "base.twig" %}
+{% block content %}
+	{% set sections = post.meta('sections') %}
+	{% set offerings = options.offerings %}
+
+	<div class="bg-dark">
+		<div class="container pb-3 pt-5 px-4">
+
+			{% for section in sections %}
+				{% if section.acf_fc_layout == 'meet_our_managers' %}
+					{% set otherMangaers = section.otherManagers %}
+					{% set founder = section.founder %}
+					<div class="row justify-content-center text-white">
+						<div class="col-12 text-center mb-4">
+							<h2>Meet Our
+								<span class="managers">Managers</span>
+							</h2>
+						</div>
+					</div>
+					<div class="row text-white flex-column-reverse flex-md-row">
+						<div class="col-12 col-md-7">
+							<div>
+								<div class="manager-name">
+									{{founder.founder_name}}
+								</div>
+
+								<div class="manager-title">{{founder.founder_title}}</div>
+								<div class="managers-details">
+									{{founder.summary}}
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-md-5 d-flex flex-column align-items-center mt-1 mb-3">
+							<img class="manager-img" width="100%" src="{{ Image(founder.image).src }}" alt="{{ Image(founder.image).title }}">
+						</div>
+					</div>
+
+					{% for manager in otherMangaers %}
+						<div class="row text-white flex-column-reverse flex-md-row">
+
+							<div class="col-12 col-md-7">
+								<div>
+									<div class="manager-name">
+										{{manager.manager_name}}
+									</div>
+
+									<div class="manager-title">{{manager.manager_title}}</div>
+									<div class="managers-details">
+										{{manager.summary}}
+									</div>
+								</div>
+							</div>
+
+							<div class="col-12 col-md-5 d-flex flex-column align-items-center mt-1 mb-3">
+
+								<img class="manager-img" width="100%" src="{{ Image(manager.image).src }}" alt="{{ Image(manager.image).title }}">
+
+							</div>
+						</div>
+					{% endfor %}
+
+				{% elseif section.acf_fc_layout == 'why_lemans' %}
+					<div class="row justify-content-start text-white mb-4">
+						<div class="col-12 col-md-6 mb-3">
+							<h2 class="about-us-subtitle">
+								Why Le Man ></h2>
+						</div>
+
+						<div class="col-12 col-md-8 why-lemans">{{options.why_le_man_summary}}</div>
+					</div>
+
+					<div class="row justify-content-center text-white why-lemans-container mb-5">
+
+						{% for offering in offerings %}
+							<div class="col-6 col-md-3 justify-content-baseline d-flex flex-column align-items-center mb-3">
+								<div class="why-lemans-item">
+									<img class="img-fluid advantage-img mb-2" src="{{ Image(offering.icon).src }}" alt="{{ Image(offering.icon).title }}"/>
+									<div class="item-title">{{offering.name}}</div>
+									<div class="item-details">{{offering.description}}</div>
+
+								</div>
+							</div>
+						{% endfor %}
+
+					</div>
+
+				{% elseif section.acf_fc_layout == 'about_lemans' %}
+					{% set sectionHeading = section.section_heading %}
+					{% set story = section.story %}
+					<div class="row justify-content-center text-white mb-3">
+						<div class="col-12 text-center">
+							<h2 class="title-underline text-center">{{sectionHeading}}</h2>
+						</div>
+					</div>
+					<div class="row text-white">
+						<div class="col-12 col-md-5">
+							<div class="about-lemans-left">
+								We are a Trusted Name in The Importing cars IndustryThis statement will be converted to
+																																																																																																																																																																																																																																																																																													this:Visited by Thousands of Car Buyers Every Month!Testimonials will be added in future
+							</div>
+						</div>
+						<div class="col-12 col-md-7">
+							<div class="about-lemans-right">
+								{{story}}
+							</div>
+						</div>
+					</div>
+				{% endif %}
+
+				{% if (loop.index != sections | length) %}
+					<div class="row justify-content-center text-white">
+						<div class="col-8">
+							<hr>
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+
+		</div>
+	</div>
+
+
+{% endblock %}
