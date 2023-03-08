@@ -1,4 +1,4 @@
-<div id="featured-cars" class="bg-dark px-md-5">
+<div id="featured-cars" class="bg-dark px-md-5 py-5">
 	<div class="container">
 		<div class="home-section-title-container text-white row flex-column justify-content-center align-content-center">
 			{{ sectionHeading }}
@@ -8,7 +8,7 @@
 			<hr class="col-2 col-md-1"/>
 		</div>
 
-		<div class="row row-cols-1 row-cols-md-3 justify-content-around px-5 pb-5 d-lg-flex d-none featured-car-desktop">
+		<div class="row row-cols-1 row-cols-md-3 justify-content-around pb-5 d-lg-flex d-none featured-car-desktop">
 			{% for car in featuredCars %}
 
 				{% set specs = car.meta('specs') %}
