@@ -1,0 +1,13 @@
+<div
+	id="brands">
+	<!-- Swiper -->
+	<div class="swiper brandsSwiper">
+		<div class="swiper-wrapper">
+			{% for brand in brands %}
+				<div class="swiper-slide d-flex align-items-center px-5">
+					<img src="{{ Image(brand.logo).src }}" alt="{{ Image(brand.logo).title }}"/>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>

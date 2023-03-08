@@ -1,0 +1,34 @@
+<div
+	id="car-types" class="bg-dark">
+	{#{{dump(cartypes)}}#}
+
+	<div class="container-fluid py-4">
+		<div class="home-section-title-container text-white row flex-column justify-content-center align-content-center pb-4">
+			{{ sectionHeading }}
+			{#<h3 class="text-center home-section-title">Browse By
+							<span class="home-section-title-highlighted">Car Types</span>
+						</h3>#}
+			<hr class="col-2 col-md-1"/>
+		</div>
+
+		<div
+			class="d-flex justify-content-center align-content-center px-5">
+			<!-- Swiper -->
+			<div class="swiper carTypesSwiper w-100">
+				<div class="swiper-wrapper">
+					{% for type in cartypes %}
+						<div class="swiper-slide">
+							<a href="/car-type/{{type.slug}}">
+								<div class="d-flex flex-column h-100 justify-content-center align-items-center">
+									<img class="img-fluid pb-3" src="{{ Image(type.image).src }}" alt="{{ Image(type.image).title }}"/>
+									<p class="text-center home-cartype-name">{{type.name}}</p>
+								</div>
+							</a>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

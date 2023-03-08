@@ -1,0 +1,65 @@
+<div id="featured-cars" class="bg-dark px-md-5">
+	<div class="container">
+		<div class="home-section-title-container text-white row flex-column justify-content-center align-content-center">
+			{{ sectionHeading }}
+			{#<h3 class="text-center home-section-title">Featured Cars from
+										<span class="home-section-title-highlighted">Le Mans Group</span>
+									</h3>#}
+			<hr class="col-2 col-md-1"/>
+		</div>
+
+		<div class="row row-cols-1 row-cols-md-3 justify-content-around px-5 pb-5 d-lg-flex d-none featured-car-desktop">
+			{% for car in featuredCars %}
+
+				{% set specs = car.meta('specs') %}
+				{% set brand = null %}
+
+				{% for term in car.terms %}
+					{% if term.taxonomy == "brand" %}
+						{% set brand = term %}
+					{% endif %}
+				{% endfor %}
+
+				<div class="col">
+					{% include "components/home-featured-car.twig" %}
+				</div>
+			{% endfor %}
+
+
+		</div>
+
+		<div id="featured-cars-carousel" class="carousel slide d-lg-none h-100 mb-5" data-bs-ride="carousel">
+			<div class="carousel-indicators">
+				{% for car in featuredCars %}
+					<button type="button" data-bs-target="#featured-cars-carousel" data-bs-slide-to="{{loop.index - 1}}" class="{{loop.index - 1 == 0 ? 'active' : ''}}"></button>
+				{% endfor %}
+			</div>
+
+
+			<div class="carousel-inner h-100">
+				{% for car in featuredCars %}
+					{% set specs = car.meta('specs') %}
+
+					{% set brand = null %}
+					{% for term in car.terms %}
+						{% if term.taxonomy == "brand" %}
+							{% set brand = term %}
+						{% endif %}
+					{% endfor %}
+
+					<div class="carousel-item px-5 {{ loop.index - 1 == 0 ? 'active' : '' }}" data-bs-interval="7000">
+						{% include "components/home-featured-car.twig" %}
+					</div>
+				{% endfor %}
+			</div>
+
+		</div>
+
+		<div class="d-flex justify-content-center align-content-center">
+			<a href="/cars">
+				<Button class="view-allcars-btn py-4">View All</button>
+			</a>
+		</div>
+
+	</div>
+</div>
