@@ -1,6 +1,6 @@
 {% set lemansFooter = options.lemans_footer %}
 {% set socialLinks = options.social_links %}
-{#{% set location = options.location %}#}
+{% set locations = options.locations %}
 
 <!-- footer -->
 <div class="bg-dark text-white border-top border-dark-subtle">
@@ -33,18 +33,58 @@
 			<div class="col-10  col-md-4">
 				<div class="align-items-center align-items-md-start d-flex flex-column mb-3">
 					<div id="lemans-location-map">
-						{#{% if (location) %}
-							<div class="acf-map">
-								<div class="marker" data-lat="{{ location['lat'] }}" data-lng="{{ location['lng'] }}"></div>
-							</div>
-						{% endif %}#}
+						<div class="acf-map " data-zoom="16">
+							{% for location in locations %}
+								<div class="marker" data-lat="{{location.location.lat}}" data-lng="{{location.location.lng}}">
+									<p class="text-dark font-weight-bold">{{location.location.name}}</p>
+								</div>
+							{% endfor %}
+						</div>
 
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.950451696399!2d31.436288814690776!3d30.009579081895026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583cce1576400b%3A0x8df1e3aed799b376!2sGrand%20Plaza!5e0!3m2!1sen!2seg!4v1676472365282!5m2!1sen!2seg" width="370" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+						<style type="text/css">
+							.map-responsive {
+
+								overflow: hidden;
+
+								padding-bottom: 56.25%;
+
+								position: relative;
+
+								height: 0;
+
+							}
+							.acf-map {
+								max-width: 100%;
+								width: 600px;
+								height: 300px;
+								border: #ccc solid 1px;
+								margin: 20px 0;
+							}
+
+							// Fixes potential theme css conflict.
+							.acf-map img {
+								max-width: inherit !important;
+							}
+						</style>
+
+						<div>
+							{% for location in locations %}
+								<div>
+									<i class="fa-solid fa-location-dot"></i>
+									<span class="font-weight-bold">{{location.location.name}}</span>
+									:
+									{{location.location.address}}
+								</div>
+							{% endfor %}
+						</div>
+
+						{#<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.950451696399!2d31.436288814690776!3d30.009579081895026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583cce1576400b%3A0x8df1e3aed799b376!2sGrand%20Plaza!5e0!3m2!1sen!2seg!4v1676472365282!5m2!1sen!2seg" width="370" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>#}
 					</div>
-					<div class="small">
-						<i class="fa-solid fa-location-dot mx-1"></i>
-						{{ options.lemans_address }}
-					</div>
+					{#<div class="small">
+																<i class="fa-solid fa-location-dot mx-1"></i>
+																{{ options.lemans_address }}
+															</div>#}
 				</div>
 			</div>
 		</div>
