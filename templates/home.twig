@@ -4,7 +4,10 @@
 {% block content %}
 	{% set sections = post.meta('sections') %}
 	<div class="bg-dark">
-		{{post.content}}
+		<div id="hero-section" class="mb-5">
+			{{post.content}}
+
+		</div>
 
 		{% for section in sections %}
 			{% set  sectionHeading = section.section_heading %}
