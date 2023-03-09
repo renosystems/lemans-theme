@@ -8,8 +8,8 @@
 
 			{% for section in sections %}
 				{% if section.acf_fc_layout == 'meet_our_managers' %}
-					{% set otherMangaers = section.otherManagers %}
-					{% set founder = section.founder %}
+					{% set managers = section.managers %}
+					{% set founder = options.lemans_founder %}
 					<div class="row justify-content-center text-white">
 						<div class="col-12 text-center mb-4">
 							<h2>Meet Our
@@ -21,10 +21,10 @@
 						<div class="col-12 col-md-7">
 							<div>
 								<div class="manager-name">
-									{{founder.founder_name}}
+									{{founder.name}}
 								</div>
 
-								<div class="manager-title">{{founder.founder_title}}</div>
+								<div class="manager-title">{{founder.title}}</div>
 								<div class="managers-details">
 									{{founder.summary}}
 								</div>
@@ -36,8 +36,8 @@
 						</div>
 					</div>
 
-					{% for manager in otherMangaers %}
-						<div class="row text-white flex-column-reverse flex-md-row">
+					{% for manager in managers %}
+						<div class="row text-white flex-column-reverse flex-md-row mt-4">
 
 							<div class="col-12 col-md-7">
 								<div>
@@ -64,7 +64,8 @@
 					<div class="row justify-content-start text-white mb-4">
 						<div class="col-12 col-md-6 mb-3">
 							<h2 class="about-us-subtitle">
-								Why Le Man ></h2>
+								{{section.section_heading}}
+							</h2>
 						</div>
 
 						<div class="col-12 col-md-8 why-lemans">{{options.why_le_man_summary}}</div>
@@ -96,8 +97,9 @@
 					<div class="row text-white">
 						<div class="col-12 col-md-5">
 							<div class="about-lemans-left">
-								We are a Trusted Name in The Importing cars IndustryThis statement will be converted to
-																																																																																																																																																																																																																																																																																													this:Visited by Thousands of Car Buyers Every Month!Testimonials will be added in future
+								We are a Trusted Name in The Importing cars Industry.<br/>
+								This statement will be converted to this: Visited by Thousands of Car Buyers Every Month!<br/>
+								Testimonials will be added in future.
 							</div>
 						</div>
 						<div class="col-12 col-md-7">

@@ -279,6 +279,7 @@ select {
 /*featured cars section*/
 .home-featured-car-wrapper {
   position: relative;
+  height: calc(100% - 150px);
 }
 
 .home-featured-car-image-wraper {
@@ -330,6 +331,7 @@ select {
   box-sizing: border-box;
   background: #171846;
   border-radius: 4px;
+  border: 3px solid #171846;
   color: #fff;
   font-weight: 600;
 }
@@ -381,8 +383,8 @@ select {
   justify-content: center;
   align-items: center;
   position: absolute;
-  left: 4%;
-  top: 7%;
+  left: 6%;
+  top: 10%;
 }
 
 .car-status-wrapper.sold {
