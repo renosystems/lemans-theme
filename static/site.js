@@ -2,17 +2,17 @@ jQuery(document).ready(function ($) {
   let wpcf7Elm = document.querySelector(".wpcf7");
 
   if (wpcf7Elm) {
-    wpcf7Elm.addEventListener(
-      "wpcf7invalid",
-      function (e) {
-        setTimeout(function () {
-          $(".wpcf7-not-valid-tip").prepend(
-            "<i class='fa-sharp fa-solid fa-circle-exclamation me-2'></i>"
-          );
-        }, 200);
-      },
-      false
-    );
+    //wpcf7Elm.addEventListener(
+    //  "wpcf7invalid",
+    //  function (e) {
+    //    setTimeout(function () {
+    //      $(".wpcf7-not-valid-tip").prepend(
+    //        "<i class='fa-sharp fa-solid fa-circle-exclamation me-2'></i>"
+    //      );
+    //    }, 300);
+    //  },
+    //  false
+    //);
 
     wpcf7Elm.addEventListener(
       "wpcf7submit",
@@ -276,7 +276,7 @@ jQuery(document).ready(function ($) {
   function centerMap(map) {
     // Create map boundaries from all map markers.
     var bounds = new google.maps.LatLngBounds();
-    console.log(bounds)
+    console.log(bounds);
     map.markers.forEach(function (marker) {
       bounds.extend({
         lat: marker.position.lat(),
@@ -294,7 +294,7 @@ jQuery(document).ready(function ($) {
 })(jQuery);
 
 function initGoogleMaps() {
-  console.log("init")
+  console.log("init");
   jQuery(".acf-map").each(function () {
     var map = initMap(jQuery(this));
   });
