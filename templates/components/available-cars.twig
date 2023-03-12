@@ -4,41 +4,48 @@
 		<div class="row py-4 justify-content-center">
 
 			<div class="col-12 col-md-2 ">
-
 				<div class="swiper carListingSwipper car-filter mb-5 mb-md-0">
 					<div class="car-filter-type fw-bold mt-3">
 						Browse by car type
 					</div>
-					<div
-						class="swiper-wrapper d-flex flex-row flex-md-column justify-content-start align-items-center  px-2 py-3">
+					<div class="swiper-wrapper d-flex flex-row flex-md-column justify-content-start align-items-center  px-2 py-3">
 						{% for type in cartypes %}
 
-						<a href="/car-type/{{type.slug}}" class="text-decoration-none swiper-slide ">
-							<div class="d-flex flex-column align-items-center">
-								<img src="{{ Image(type.image).src }}" alt="{{ Image(type.image).title }}"
-									class="car-filter-img pb-3">
-								<p class="car-filter-type">{{type.name}}</p>
-							</div>
-						</a>
+							<a href="/car-type/{{type.slug}}" class="text-decoration-none swiper-slide ">
+								<div class="d-flex flex-column align-items-center">
+									<img src="{{ Image(type.image).src }}" alt="{{ Image(type.image).title }}" class="car-filter-img pb-3">
+									<p class="car-filter-type">{{type.name}}</p>
+								</div>
+							</a>
 
 						{% endfor %}
 					</div>
 				</div>
 			</div>
+
+			{% if (posts|length == 0) %}
+				<div class="col-9 col-md-10">
+					<div class="d-flex flex-column justify-content-center align-items-center h-100 text-center" id="empty-cartype">
+						<h1>No Available cars found!</h1>
+						<p>no available cars found for this car type. you can browse other car types</p>
+					</div>
+				</div>
+			{% endif %}
+
 			<div class="col-9 col-md-10">
 				<div class="row justify-content-center gx-3 gy-5" id="cars-listing-wrapper">
 
 					{% for car in posts %}
-					{% set specs = car.meta('specs') %}
-					{% set brand = null %}
-					{% for term in car.terms %}
-					{% if term.taxonomy == "brand" %}
-					{% set brand = term %}
-					{% endif %}
-					{% endfor %}
-					<div class="col-12 col-lg-4">
-						{% include "components/home-featured-car.twig" %}
-					</div>
+						{% set specs = car.meta('specs') %}
+						{% set brand = null %}
+						{% for term in car.terms %}
+							{% if term.taxonomy == "brand" %}
+								{% set brand = term %}
+							{% endif %}
+						{% endfor %}
+						<div class="col-12 col-lg-4">
+							{% include "components/home-featured-car.twig" %}
+						</div>
 
 					{% endfor %}
 

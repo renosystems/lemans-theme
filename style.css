@@ -1040,3 +1040,10 @@ img {
 #thanku {
   height: 90vh;
 }
+
+#empty-cartype {
+  color: #171846;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+  border-radius: 12px;
+}
