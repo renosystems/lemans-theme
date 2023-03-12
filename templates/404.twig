@@ -1,5 +1,20 @@
 {% extends "base.twig" %}
 
+{% set notFound = options['404_content'] %}
+
 {% block content %}
-	Sorry, we couldn't find what you're looking for.
+	<div class="py-5 bg-dark">
+		<div class="container">
+			<div id="not-found-Wrapper" class="w-100 d-flex flex-column justify-content-center align-items-center py-5">
+				<img src="{{ Image(notFound.icon).src }}" alt=" {{ Image(notFound.icon).title }} " class="not-found-icon"/>
+
+				<h2 class="fw-bolder mt-3">{{notFound.heading}}</h2>
+				<p>
+					{{notFound.message}}
+				</p>
+
+				<a class="goto-home-btn mt-5" href="/">Home page</a>
+			</div>
+		</div>
+	</div>
 {% endblock %}

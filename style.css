@@ -1047,3 +1047,31 @@ img {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
   border-radius: 12px;
 }
+
+#not-found-Wrapper {
+  color: #171846;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+  border-radius: 12px;
+  min-height: 50vh;
+}
+
+.goto-home-btn {
+  background-color: #171846;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5em 2em;
+  border-radius: 5px;
+}
+
+.goto-home-btn:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.not-found-icon {
+  width: 100px !important;
+  height: 100px !important;
+  margin: auto;
+}
