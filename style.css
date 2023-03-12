@@ -31,12 +31,7 @@ a:link {
   color: #000000;
   font-size: 1rem;
   font-weight: 600;
-  padding: 0 50px;
-}
-
-#header .nav-link.active {
-  color: #fff;
-  background-color: #171846;
+  padding: 30px 50px;
 }
 
 #main-navbar {
@@ -50,6 +45,17 @@ a:link {
 #main-navbar .nav-link.active {
   background-color: #d9d9d9;
   color: #444444;
+}
+
+@media (min-width: 993px) {
+  #main-navbar .nav-link.active {
+    color: #fff;
+    background-color: #171846;
+  }
+
+  #main-navbar .main-menu-item {
+    border-bottom: 0;
+  }
 }
 
 #navbar-search #search-menu {
