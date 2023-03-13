@@ -26,8 +26,8 @@
 			{% if (posts|length == 0) %}
 				<div class="col-12 col-md-10">
 					<div class="d-flex flex-column justify-content-center align-items-center h-100 text-center py-5" id="empty-cartype">
-						<h1>No Available cars found!</h1>
-						<p>no available cars found for this car type. you can browse other car types</p>
+						<h1>{{ options.empty_car_type.heading }}</h1>
+						<p>{{ options.empty_car_type.message }}</p>
 					</div>
 				</div>
 			{% endif %}
