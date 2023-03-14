@@ -10,10 +10,11 @@
 				{% if section.acf_fc_layout == 'meet_our_managers' %}
 					{% set managers = section.managers %}
 					{% set founder = options.lemans_founder %}
+					{% set sectionHeading = section.section_heading %}
 					<div class="row justify-content-center text-white">
 						<div class="col-12 text-center mb-4">
-							<h2>Meet Our
-								<span class="managers">Managers</span>
+							<h2>{{ sectionHeading.regular }}
+								<span class="managers">{{ sectionHeading.highlighted }}</span>
 							</h2>
 						</div>
 					</div>
@@ -97,9 +98,7 @@
 					<div class="row text-white">
 						<div class="col-12 col-md-5">
 							<div class="about-lemans-left">
-								We are a Trusted Name in The Importing cars Industry.<br/>
-								This statement will be converted to this: Visited by Thousands of Car Buyers Every Month!<br/>
-								Testimonials will be added in future.
+								{{ section.subtitle }}
 							</div>
 						</div>
 						<div class="col-12 col-md-7">
